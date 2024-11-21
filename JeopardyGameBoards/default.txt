@@ -1,0 +1,15 @@
+Science
+What is the chemical symbol for water?|Who developed the theory of relativity?|What is the powerhouse of the cell?|What gas do plants absorb during photosynthesis?|In physics, what is the unit of measurement for force?|
+H2O|Albert Einstein|Mitochondria|Carbon dioxide|Newton|
+History
+Who was the first President of the United States?|In what year did World War II end?|Who was the leader of the Soviet Union during the Cuban Missile Crisis?|What ancient civilization built the pyramids in Egypt?|The Renaissance period originated in which country?|
+George Washington|1945|Nikita Khrushchev|Ancient Egyptians|Italy|
+Literature
+Who wrote "Romeo and Juliet"?|What is the title of J.K. Rowling's first Harry Potter book?|Who wrote "To Kill a Mockingbird"?|What dystopian novel by George Orwell explores themes of totalitarianism?|Which Shakespeare play features the character Macbeth?|
+William Shakespeare|Harry Potter and the Philosopher's Stone (or Sorcerer's Stone in the U.S.)|Harper Lee|1984|Macbeth|
+Geography
+What is the capital city of France?|Which river is the longest in the world?|In which continent is the Sahara Desert located?|What is the largest ocean on Earth?|Name the seven continents.|
+Paris|Nile|Africa|Pacific Ocean|Africa, Antarctica, Asia, Europe, North America, Australia, South America|
+Technology
+Who is the co-founder of Microsoft?|What does the acronym "HTML" stand for?|In computing, what does CPU stand for?|Who developed the theory of general relativity?|What is the programming language created by Guido van Rossum?|
+Bill Gates|Hypertext Markup Language|Central Processing Unit|Albert Einstein|Python|
