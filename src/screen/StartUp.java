@@ -1,3 +1,5 @@
+package screen;
+
 import java.io.File;
 
 public class StartUp {

@@ -1,3 +1,5 @@
+package screen;
+
 import java.io.FileWriter;
 import java.util.List;
 import java.io.File;
@@ -7,14 +9,14 @@ import java.io.IOException;
 
 //I wanted to use dictionaries to store questions with their answers, there just wasn't a good way of doing that
 
-public class JeopardyBoard {
+public class JeopardyBoardOld {
     public static Subject subjectOne;
     public static Subject subjectTwo;
     public static Subject subjectThree;
     public static Subject subjectFour;
     public static Subject subjectFive;
 
-    public JeopardyBoard() {
+    public JeopardyBoardOld() {
         createDefaultBoard();
         String file = "default.txt";
         if (!file.contains(".txt")) {

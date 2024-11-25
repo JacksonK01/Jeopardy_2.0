@@ -1,0 +1,152 @@
+[
+  {
+    "subject_title": "Science",
+    "subject_questions": [
+      {
+        "question": "What is the chemical symbol for water?",
+        "answer": "H2O",
+        "value": 100
+      },
+      {
+        "question": "Who developed the theory of relativity?",
+        "answer": "Albert Einstein",
+        "value": 200
+      },
+      {
+        "question": "What is the powerhouse of the cell?",
+        "answer": "Mitochondria",
+        "value": 300
+      },
+      {
+        "question": "What gas do plants absorb during photosynthesis?",
+        "answer": "Carbon dioxide",
+        "value": 400
+      },
+      {
+        "question": "In physics, what is the unit of measurement for force?",
+        "answer": "Newtons",
+        "value": 500
+      }
+    ]
+  },
+  {
+    "subject_title": "History",
+    "subject_questions": [
+      {
+        "question": "Who was the first President of the United States?",
+        "answer": "George Washington",
+        "value": 100
+      },
+      {
+        "question": "In what year did World War II end?",
+        "answer": "1945",
+        "value": 200
+      },
+      {
+        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+        "answer": "Nikita Khrushchev",
+        "value": 300
+      },
+      {
+        "question": "What ancient civilization built the pyramids in Egypt?",
+        "answer": "Ancient Egyptians",
+        "value": 400
+      },
+      {
+        "question": "The Renaissance period originated in which country?",
+        "answer": "Italy",
+        "value": 500
+      }
+    ]
+  },
+  {
+    "subject_title": "Literature",
+    "subject_questions": [
+      {
+        "question": "Who wrote \"Romeo and Juliet\"?",
+        "answer": "William Shakespeare",
+        "value": 100
+      },
+      {
+        "question": "What is the title of J.K. Rowling\u0027s first Harry Potter book?",
+        "answer": "Harry Potter and the Philosopher\u0027s Stone (or Sorcerer\u0027s Stone in the U.S.)",
+        "value": 200
+      },
+      {
+        "question": "Who wrote \"To Kill a Mockingbird\"?",
+        "answer": "Harper Lee",
+        "value": 300
+      },
+      {
+        "question": "What dystopian novel by George Orwell explores themes of totalitarianism?",
+        "answer": "1984",
+        "value": 400
+      },
+      {
+        "question": "Which Shakespeare play features the character Macbeth?",
+        "answer": "Macbeth",
+        "value": 500
+      }
+    ]
+  },
+  {
+    "subject_title": "Geography",
+    "subject_questions": [
+      {
+        "question": "What is the capital city of France?",
+        "answer": "Paris",
+        "value": 100
+      },
+      {
+        "question": "Which river is the longest in the world?",
+        "answer": "Nile",
+        "value": 200
+      },
+      {
+        "question": "In which continent is the Sahara Desert located?",
+        "answer": "Africa",
+        "value": 300
+      },
+      {
+        "question": "What is the largest ocean on Earth?",
+        "answer": "Pacific Ocean",
+        "value": 400
+      },
+      {
+        "question": "Name the seven continents.",
+        "answer": "Africa, Antarctica, Asia, Europe, North America, Australia, South America",
+        "value": 500
+      }
+    ]
+  },
+  {
+    "subject_title": "Technology",
+    "subject_questions": [
+      {
+        "question": "Who is the co-founder of Microsoft?",
+        "answer": "Bill Gates",
+        "value": 100
+      },
+      {
+        "question": "What does the acronym \"HTML\" stand for?",
+        "answer": "Hypertext Markup Language",
+        "value": 200
+      },
+      {
+        "question": "In computing, what does CPU stand for?",
+        "answer": "Central Processing Unit",
+        "value": 300
+      },
+      {
+        "question": "Who developed the theory of general relativity?",
+        "answer": "Albert Einstein",
+        "value": 400
+      },
+      {
+        "question": "What is the programming language created by Guido van Rossum?",
+        "answer": "Python",
+        "value": 500
+      }
+    ]
+  }
+]

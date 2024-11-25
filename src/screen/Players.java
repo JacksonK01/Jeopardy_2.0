@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package screen;
 
 public class Players {
     public static Player PlayerOne;
