@@ -132,7 +132,9 @@ public class PlayerMenuManager extends AbstractMenu {
         List<IPlayer> players = jeopardyBoard.getPlayers();
 
         textFields.forEach(text -> {
-            players.add(new JeopardyPlayer(text.getText()));
+            if(text.isVisible()) {
+                players.add(new JeopardyPlayer(text.getText()));
+            }
         });
 
         if(!screen.getFileToOpen().equals(Screen.DEFAULT_FILE_TO_OPEN)) {

@@ -19,13 +19,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BoardMenuManager extends AbstractMenu {
-    private int maxPlayersForColumn = 0;
-    private final List<Pair<IPlayer, JLabel>> playersLabels;
     private boolean hasInit = false;
 
     public BoardMenuManager(Screen screen) {
         super(screen);
-        this.playersLabels = new ArrayList<>();
     }
 
     @Override
@@ -89,7 +86,7 @@ public class BoardMenuManager extends AbstractMenu {
             }
         }
 
-        maxPlayersForColumn = subjects.size();
+        int maxPlayersForColumn = subjects.size();
 
         List<IPlayer> players = screen.getJeopardyBoard().getPlayers();
 
@@ -97,7 +94,7 @@ public class BoardMenuManager extends AbstractMenu {
         int yOffset = 1;
         for(int i = 0; i < players.size(); i++) {
             IPlayer player = players.get(i);
-            int y = subjects.get(i).getQuestions().size() + yOffset;
+            int y = subjects.get(i % maxPlayersForColumn).getQuestions().size() + yOffset;
             JLabel label = new JLabel();
 
             TextConfigure.configure().setX(x).setY(y).setText(player.getNames() + ": $" + player.getScore())
