@@ -18,10 +18,102 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerMenuManager extends AbstractMenu {
+    private static final int MAX_PLAYERS = 15;
+    private static final int MAX_PER_ROW = 5;
+    private static final int MIN_PLAYERS = 2;
+
     private List<JTextField> textFields;
+    private final JPanel addPlayers;
+    //y value
+    private int row = 0;
+    //x value
+    private int column = 0;
+
+    int amountVisible = 0;
+
+
 
     public PlayerMenuManager(Screen screen) {
         super(screen);
+
+        addPlayers = new JPanel();
+        addPlayers.setOpaque(false);
+        addPlayers.setLayout(screen.getLayout());
+
+
+        JLabel title = new JLabel();
+
+        JButtonListener back = new JButtonListener("<= Back", (e) -> {
+            screen.setContentPane(screen.getStartMenu());
+        });
+
+        JButtonListener reset = new JButtonListener("Reset", (e) -> {
+            this.onReset();
+        });
+
+        JButtonListener addPlayer = new JButtonListener("Add Player", (e) -> {
+            if(!canAddPlayer()) {
+                return;
+            }
+
+            boolean search = true;
+            int i = 0;
+            while(search && i < textFields.size()) {
+                if(!textFields.get(i).isVisible()) {
+                    textFields.get(i).setVisible(true);
+                    search = false;
+                    amountVisible++;
+                }
+                i++;
+            }
+        });
+
+        JButtonListener removePlayer = new JButtonListener("Remove Player", (e) -> {
+            if(!canRemovePlayer()) {
+                return;
+            }
+
+            boolean search = true;
+            System.out.println(textFields.size());
+            int i = textFields.size() - 1;
+            while(search && i >= 0) {
+                if(textFields.get(i).isVisible()) {
+                    textFields.get(i).setVisible(false);
+                    search = false;
+                    amountVisible--;
+                }
+                i--;
+            }
+        });
+        JButtonListener confirm = new JButtonListener("Confirm Names", this::confirmPlayers);
+
+        int north = 400;
+
+        TextConfigure.configure().setText("Enter Player Names").setBackgroundColor(Screen.JEOPARDY_BLUE).setX(1).setSize(30).setWidth(100).setSouth(0).confirm(title, screen, addPlayers);
+
+        ButtonConfigure.configure().setX(0).setWidth(30).setHeight(10).setY(0).finish(back, screen, addPlayers);
+        ButtonConfigure.configure().setX(2).setWidth(30).setHeight(10).setY(0).finish(reset, screen, addPlayers);
+        ButtonConfigure.configure().setX(0).setWidth(60).setHeight(20).setY(7).setNorth(north).finish(removePlayer, screen, addPlayers);
+        ButtonConfigure.configure().setX(1).setY(7).setWidth(60).setHeight(30).setNorth(north).setEast(25).setWest(25).finish(confirm, screen, addPlayers);
+        ButtonConfigure.configure().setX(2).setWidth(60).setHeight(20).setY(7).setNorth(north).finish(addPlayer, screen, addPlayers);
+
+        addPlayers.setBounds(0, 0, width, height);
+
+        this.pane.add(addPlayers, JLayeredPane.MODAL_LAYER);
+
+        //Foreground
+        textFields = new ArrayList<>();
+        createDefaultTextFields(foreground);
+    }
+
+    @Override
+    public void onReset() {
+        column = 0;
+        row = 0;
+        amountVisible = 0;
+        textFields.clear();
+        foreground.removeAll();
+        createDefaultTextFields(foreground);
     }
 
     @Override
@@ -31,38 +123,25 @@ public class PlayerMenuManager extends AbstractMenu {
 
     @Override
     public JPanel addForeground() {
-        JPanel panel = new JPanel();
-
-        textFields = new ArrayList<>();
-
-        int numPlayers = 5;
-
-        JLabel title = new JLabel();
-
-        TextConfigure.configure().setText("Enter Player Names").setBackgroundColor(Screen.JEOPARDY_BLUE).setSize(30).setWidth(100).setSouth(50).confirm(title, screen, panel);
-
-        for(int i = 0; i < numPlayers; i++) {
-            JTextField enterPlayer = new JTextField();
-            TextFieldConfigure.configure().setText("Enter Player " + (i + 1) + " Here").setColumn(25)
-                    .setNorth(10).setEast(10).setSouth(10).setWest(10).setSize(20).setHeight(20).setY(i + 1).confirm(enterPlayer, screen, panel);
-            textFields.add(enterPlayer);
-        }
-
-        JButtonListener confirm = new JButtonListener("Confirm Names", this::confirmPlayers);
-        ButtonConfigure.configure().setY(6).setWidth(100).setHeight(30).setNorth(10).finish(confirm, screen, panel);
-
-        return panel;
+        return new JPanel();
     }
 
     private void confirmPlayers(ActionEvent e) {
         IBoard<ISubject> jeopardyBoard = screen.getJeopardyBoard();
+        jeopardyBoard.clearAllPlayers();
         List<IPlayer> players = jeopardyBoard.getPlayers();
 
         textFields.forEach(text -> {
             players.add(new JeopardyPlayer(text.getText()));
         });
-        
-        screen.setContentPane(screen.getJeopardyBoardMenu().getPane());
+
+        if(!screen.getFileToOpen().equals(Screen.DEFAULT_FILE_TO_OPEN)) {
+            String fileToOpen = screen.getFileToOpen();
+            jeopardyBoard.setSubjects(fileToOpen);
+            System.out.println("Successfully reading " + fileToOpen);
+        }
+
+        screen.setContentPane(screen.getJeopardyBoardMenu());
     }
 
     @Override
@@ -72,6 +151,48 @@ public class PlayerMenuManager extends AbstractMenu {
 
     @Override
     public void tick() {
+        addPlayers.setBounds(0, 0, width, height);
+    }
 
+    private void createDefaultTextFields(JPanel panel) {
+        for(int i = 0; i < MAX_PLAYERS; i++) {
+            playerTextFieldCreator(i + 1, column, row, panel);
+        }
+    }
+
+    //n is both the y value and number for player
+    private void playerTextFieldCreator(int n, int x, int y, JPanel panel) {
+        JTextField enterPlayer = new JTextField();
+        TextFieldConfigure.configure().setText("Enter Player " + (n) + " Here").setColumn(25).setX(x)
+                .setNorth(10).setEast(10).setSouth(10).setWest(10).setSize(15).setHeight(20).setY(y).confirm(enterPlayer, screen, panel);
+        textFields.add(enterPlayer);
+        if(textFields.size() > MAX_PER_ROW) {
+            enterPlayer.setVisible(false);
+        } else {
+            amountVisible++;
+        }
+        incrementRowAndColumn();
+    }
+
+    private boolean canAddPlayer() {
+        return amountVisible < MAX_PLAYERS;
+    }
+
+    private boolean canRemovePlayer() {
+        return amountVisible > MIN_PLAYERS;
+    }
+
+
+    private void incrementRowAndColumn() {
+        if (!canAddPlayer()) {
+            row = 4;
+            column = 2;
+            return;
+        }
+        row++;
+        if (row >= MAX_PER_ROW) {
+            column++;
+            row = 0;
+        }
     }
 }

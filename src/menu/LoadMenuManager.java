@@ -11,6 +11,11 @@ public class LoadMenuManager extends AbstractMenu {
     }
 
     @Override
+    public void onReset() {
+
+    }
+
+    @Override
     public JPanel addBackground() {
         JPanel background = new JPanel();
         background.setBackground(new Color(4, 16, 84));

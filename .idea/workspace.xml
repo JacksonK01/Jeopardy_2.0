@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e544cd19-6113-4df0-bdf4-83aa57f93f8d" name="Changes" comment="Added Gson to lib folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/impl/JeopardyBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/JeopardyBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intr/IBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intr/IBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/AbstractMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/AbstractMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/BoardMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/BoardMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/LoadMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/LoadMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/PlayerMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/PlayerMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/QuestionMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/QuestionMenuManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/RewardMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RewardMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/StartMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/StartMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/configure/ButtonConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/configure/ButtonConfigure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,23 +54,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "J:/Downloads/gson-2.11.0.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;J:/Downloads/gson-2.11.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="J:\Downloads\Jeopardy_2.0\lib" />

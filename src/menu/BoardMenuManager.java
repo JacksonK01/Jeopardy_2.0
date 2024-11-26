@@ -1,23 +1,31 @@
 package menu;
 
+import impl.JeopardyPlayer;
+import intr.IBoard;
 import intr.IPlayer;
 import intr.IQuestion;
 import intr.ISubject;
 import screen.Screen;
 import util.JBackgroundPanel;
+import util.Pair;
 import util.configure.ButtonConfigure;
 import util.configure.TextConfigure;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BoardMenuManager extends AbstractMenu {
-    int maxPlayersForColumn = 0;
+    private int maxPlayersForColumn = 0;
+    private final List<Pair<IPlayer, JLabel>> playersLabels;
+    private boolean hasInit = false;
 
     public BoardMenuManager(Screen screen) {
         super(screen);
+        this.playersLabels = new ArrayList<>();
     }
 
     @Override
@@ -27,11 +35,26 @@ public class BoardMenuManager extends AbstractMenu {
 
     @Override
     public JPanel addForeground() {
-        JPanel fg = new JPanel();
+        return new JPanel();
+    }
+
+    @Override
+    public void draw(Graphics g) {
+
+    }
+
+    @Override
+    public void tick() {
+
+    }
+
+    @Override
+    public void onSetActive() {
+        if(hasInit) {
+            return;
+        }
 
         List<ISubject> subjects = screen.getJeopardyBoard().getSubjects();
-
-        maxPlayersForColumn = subjects.size();
 
         Color blue = Screen.JEOPARDY_BLUE;
         Color yellow = Screen.JEOPARDY_YELLOW;
@@ -42,7 +65,7 @@ public class BoardMenuManager extends AbstractMenu {
             JLabel subjectTitle = new JLabel();
             TextConfigure.configure().setX(i).setText(s.getTitle()).setTextColor(yellow)
                     .setStyle(Font.BOLD).setSize(16).setWidth(75).setHeight(25)
-                    .setSouth(25).setBackgroundColor(blue).confirm(subjectTitle, screen, fg);
+                    .setSouth(25).setBackgroundColor(blue).confirm(subjectTitle, screen, foreground);
             subjectTitle.setBackground(blue);
 
             List<IQuestion> questions = s.getQuestions();
@@ -54,7 +77,7 @@ public class BoardMenuManager extends AbstractMenu {
                     QuestionMenuManager menu = (QuestionMenuManager) screen.getQuestionMenu();
                     button.setVisible(false);
                     menu.setQuestion(q);
-                    screen.setContentPane(menu.getPane());
+                    screen.setContentPane(menu);
                 };
 
                 button.addActionListener(action);
@@ -62,21 +85,42 @@ public class BoardMenuManager extends AbstractMenu {
                 ButtonConfigure.configure().setX(i).setY(j + 1).setText("$" + q.getValue())
                         .setWidth(90).setHeight(65)
                         .setSouth(5).setBackgroundColor(blue)
-                        .setForegroundColor(yellow).finish(button, screen, fg);
+                        .setForegroundColor(yellow).finish(button, screen, foreground);
             }
         }
 
-        return fg;
-    }
+        maxPlayersForColumn = subjects.size();
 
-    @Override
-    public void draw(Graphics g) {
-
-    }
-
-    @Override
-    public void tick() {
         List<IPlayer> players = screen.getJeopardyBoard().getPlayers();
 
+        int x = 0;
+        int yOffset = 1;
+        for(int i = 0; i < players.size(); i++) {
+            IPlayer player = players.get(i);
+            int y = subjects.get(i).getQuestions().size() + yOffset;
+            JLabel label = new JLabel();
+
+            TextConfigure.configure().setX(x).setY(y).setText(player.getNames() + ": $" + player.getScore())
+                    .setTextColor(yellow).setStyle(Font.BOLD).setSize(16).setWidth(75).setHeight(25)
+                    .setBackgroundColor(blue).confirm(label, screen, foreground);
+
+            x++;
+            if(x >= maxPlayersForColumn) {
+                x = 0;
+                yOffset++;
+            }
+        }
+
+        foreground.setOpaque(false);
+        foreground.setLayout(screen.getLayout());
+        foreground.setBounds(0, 0, width, height);
+
+        hasInit = true;
+    }
+
+    @Override
+    public void onReset() {
+        hasInit = false;
+        foreground.removeAll();
     }
 }

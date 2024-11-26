@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class Screen extends JFrame implements ActionListener, Runnable {
     public final static Color JEOPARDY_BLUE = new Color(4, 16, 84);
     public final static Color JEOPARDY_YELLOW = new Color(255,255,0);
+    public final static String DEFAULT_FILE_TO_OPEN = "default.json";
     private final static int FPS = 60;
 
     private int fpsCount = 0;
@@ -28,11 +29,14 @@ public class Screen extends JFrame implements ActionListener, Runnable {
 
     private final Thread thread;
 
+    private AbstractMenu currentMenu;
     private final AbstractMenu startMenu;
     private final AbstractMenu jeopardyBoardMenu;
     private final AbstractMenu questionMenu;
     private final AbstractMenu playerMenu;
     private final AbstractMenu rewardMenu;
+
+    private String fileToOpen = DEFAULT_FILE_TO_OPEN;
 
     private final IBoard<ISubject> jeopardyBoard;
 
@@ -52,8 +56,6 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     public int screenWidth = screenSize.width;
     public int screenHeight = screenSize.height;
 
-    JLabel question = new JLabel();
-    JLabel answer = new JLabel();
     JLabel POneScore = new JLabel();
     JLabel PTwoScore = new JLabel();
     JLabel PThreeScore = new JLabel();
@@ -124,13 +126,22 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         playerMenu = new PlayerMenuManager(this);
         rewardMenu = new RewardMenuManager(this);
 
-        setContentPane(startMenu.getPane());
+        setContentPane(startMenu);
 
         //Order specifically here
         setVisible(true);
 
         thread = new Thread(this);
         thread.start();
+    }
+
+    public void setContentPane(AbstractMenu menu) {
+        if(currentMenu != null) {
+            currentMenu.OnRemove();
+        }
+        menu.onSetActive();
+        currentMenu = menu;
+        setContentPane(menu.getPane());
     }
 
 
@@ -611,6 +622,14 @@ public class Screen extends JFrame implements ActionListener, Runnable {
 
     public IBoard<ISubject> getJeopardyBoard() {
         return jeopardyBoard;
+    }
+
+    public String getFileToOpen() {
+        return fileToOpen;
+    }
+
+    public void setFileToOpen(String fileToOpen) {
+        this.fileToOpen = fileToOpen;
     }
 
     @Override

@@ -111,6 +111,10 @@ public class ButtonConfigure {
     }
 
     public void finish(JButton button, Screen screen, JPanel panel) {
+        finish(button, panel, screen.getLayout());
+    }
+
+    public void finish(JButton button, JPanel panel, GridBagLayout layout) {
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridx = x;
@@ -123,7 +127,7 @@ public class ButtonConfigure {
 
         gbc.anchor = GridBagConstraints.CENTER;
 
-        screen.getLayout().setConstraints(button, gbc);
+        layout.setConstraints(button, gbc);
         panel.add(button);
         button.setVisible(visible);
 

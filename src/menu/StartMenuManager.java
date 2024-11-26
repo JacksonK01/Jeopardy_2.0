@@ -16,6 +16,11 @@ public class StartMenuManager extends AbstractMenu {
     }
 
     @Override
+    public void onReset() {
+
+    }
+
+    @Override
     public JPanel addBackground() {
         return new JBackgroundPanel("startmenu_background.jpg");
     }
@@ -24,7 +29,7 @@ public class StartMenuManager extends AbstractMenu {
     public JPanel addForeground() {
         JPanel newForeground = new JPanel();
 
-        JButtonListener startButton = new JButtonListener("Start", (e) -> screen.setContentPane(screen.getPlayerMenu().getPane()));
+        JButtonListener startButton = new JButtonListener("Start", (e) -> screen.setContentPane(screen.getPlayerMenu()));
         JButtonListener loadButton = new JButtonListener("Load", (e) -> screen.setContentPane(screen.loadScreen));
         JButtonListener customButton = new JButtonListener("Custom", (e) -> screen.setContentPane(screen.createQuestionScreen));
 

@@ -13,6 +13,11 @@ public class RewardMenuManager extends AbstractMenu {
     }
 
     @Override
+    public void onReset() {
+
+    }
+
+    @Override
     public JPanel addBackground() {
         return new JBackgroundPanel("reward_menu.jpg");
     }
@@ -22,7 +27,7 @@ public class RewardMenuManager extends AbstractMenu {
         JPanel jPanel = new JPanel();
 
         JButtonListener button = new JButtonListener("Board", (e) -> {
-           screen.setContentPane(screen.getJeopardyBoardMenu().getPane());
+           screen.setContentPane(screen.getJeopardyBoardMenu());
         });
 
         jPanel.add(button);

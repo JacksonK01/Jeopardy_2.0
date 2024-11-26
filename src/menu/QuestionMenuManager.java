@@ -25,6 +25,11 @@ public class QuestionMenuManager extends AbstractMenu {
     }
 
     @Override
+    public void onReset() {
+
+    }
+
+    @Override
     public JPanel addBackground() {
         return new JBackgroundPanel("background_questions.jpg");
     }
@@ -52,7 +57,7 @@ public class QuestionMenuManager extends AbstractMenu {
             nextButton.setVisible(false);
             question.setVisible(true);
             answer.setVisible(false);
-            screen.setContentPane(screen.getRewardMenu().getPane());
+            screen.setContentPane(screen.getRewardMenu());
         });
 
         ButtonConfigure.configure().setY(1).setWidth(75).setHeight(50).setNorth(50).finish(answerButton, screen, fg);

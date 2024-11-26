@@ -3,6 +3,7 @@ package impl;
 import intr.IBoard;
 import intr.IPlayer;
 import intr.ISubject;
+import screen.Screen;
 import util.JsonHandler;
 
 import java.util.ArrayList;
@@ -11,25 +12,13 @@ import java.util.List;
 //Manages the questions and players, the whole board. DOES not do GUI. Purely logic.
 //Gets initialized after user presses "Start"
 public class JeopardyBoard implements IBoard<ISubject> {
-    private final List<ISubject> subjects;
+    private List<ISubject> subjects;
     private final List<IPlayer> players;
 
     public JeopardyBoard() {
         subjects = createDefaultSubjects();
-        JsonHandler.exportJsonToFile(JsonHandler.serializeBoard(this), "default");
+        JsonHandler.exportJsonToFile(JsonHandler.serializeBoard(this), Screen.DEFAULT_FILE_TO_OPEN);
 
-        players = new ArrayList<>();
-    }
-
-    public JeopardyBoard(String fileToOpen) {
-        String json = JsonHandler.readJsonFromFile(fileToOpen);
-        if(json == null) {
-            System.out.println("Error reading " + fileToOpen + ". Using default instead");
-            subjects = createDefaultSubjects();
-            JsonHandler.exportJsonToFile(JsonHandler.serializeBoard(this), "default");
-        } else {
-            subjects = JsonHandler.deSerializeSubjects(fileToOpen, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
-        }
         players = new ArrayList<>();
     }
 
@@ -88,5 +77,22 @@ public class JeopardyBoard implements IBoard<ISubject> {
     @Override
     public List<IPlayer> getPlayers() {
         return players;
+    }
+
+    @Override
+    public void setSubjects(String fileToOpen) {
+        String json = JsonHandler.readJsonFromFile(fileToOpen);
+        if(json == null) {
+            System.out.println("Error reading " + fileToOpen + ". Using default instead");
+            subjects = createDefaultSubjects();
+            JsonHandler.exportJsonToFile(JsonHandler.serializeBoard(this), "default");
+        } else {
+            subjects = JsonHandler.deSerializeSubjects(fileToOpen, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
+        }
+    }
+
+    @Override
+    public void clearAllPlayers() {
+        players.clear();
     }
 }

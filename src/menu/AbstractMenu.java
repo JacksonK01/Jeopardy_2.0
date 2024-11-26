@@ -15,8 +15,6 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
     protected JPanel background;
     protected JPanel foreground;
     protected GridBagLayout layout;
-    //Holds a button and it's action
-    protected List<JButton> buttons;
     protected Screen screen;
 
     protected int width = 0;
@@ -28,7 +26,6 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
         priorityInit();
 
         this.pane = new JLayeredPane();
-        this.buttons = new ArrayList<>();
         this.layout = screen.getLayout();
         this.width = screen.getWidth();
         this.height = screen.getHeight();
@@ -46,26 +43,12 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
         background.setBackground(Color.BLUE);
         foreground.setOpaque(false);
 
-        for(int i = 0; i < foreground.getComponentCount(); i++) {
-            Component element = foreground.getComponent(i);
-            if(element instanceof JButton jButton) {
-                buttons.add(jButton);
-            }
-        }
-
-        for(int i = 0; i < background.getComponentCount(); i++) {
-            Component element = background.getComponent(i);
-            if(element instanceof JButton jButton) {
-                buttons.add(jButton);
-            }
-        }
-
         this.pane.add(background, JLayeredPane.DEFAULT_LAYER);
         this.pane.add(foreground, JLayeredPane.PALETTE_LAYER);
     }
 
     protected void enableLayout() {
-        this.foreground.setLayout(this.layout);
+        this.foreground.setLayout(screen.getLayout());
     }
 
     //Meant to be overrided.
@@ -73,10 +56,6 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
 
     public JLayeredPane getPane() {
         return this.pane;
-    }
-
-    public List<JButton> getButtons() {
-        return this.buttons;
     }
 
     public void update() {
@@ -88,4 +67,15 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
         this.pane.setBounds(0, 0, width, height);
         tick();
     }
+
+    //Gets called when the Screen has this menu active
+    //Meant to be overrided
+    public void onSetActive() {}
+
+    //Gets called when the Screen isn't active pane anymore
+    //Meant to be overrided
+    public void OnRemove() {}
+
+    //Called when everything should be reset to init state
+    public abstract void onReset();
 }
