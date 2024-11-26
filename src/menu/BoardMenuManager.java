@@ -1,13 +1,10 @@
 package menu;
 
-import impl.JeopardyBoard;
-import intr.IBoard;
 import intr.IPlayer;
 import intr.IQuestion;
 import intr.ISubject;
 import screen.Screen;
 import util.JBackgroundPanel;
-import util.JButtonListener;
 import util.configure.ButtonConfigure;
 import util.configure.TextConfigure;
 

@@ -2,6 +2,7 @@ package menu;
 
 import screen.Screen;
 import util.JBackgroundPanel;
+import util.JButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,12 @@ public class RewardMenuManager extends AbstractMenu {
     @Override
     public JPanel addForeground() {
         JPanel jPanel = new JPanel();
+
+        JButtonListener button = new JButtonListener("Board", (e) -> {
+           screen.setContentPane(screen.getJeopardyBoardMenu().getPane());
+        });
+
+        jPanel.add(button);
 
         return jPanel;
     }

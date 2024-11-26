@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e544cd19-6113-4df0-bdf4-83aa57f93f8d" name="Changes" comment="Old Version Of Jeopardy added">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e544cd19-6113-4df0-bdf4-83aa57f93f8d" name="Changes" comment="Added Gson to lib folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jeopardy 2.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Jeopardy 2.0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeopardyGameBoards/default.txt" beforeDir="false" afterPath="$PROJECT_DIR$/JeopardyGameBoards/default.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SavedBoards/default.json" beforeDir="false" afterPath="$PROJECT_DIR$/SavedBoards/default.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/intr/IBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intr/IBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/JsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/JsonHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/BoardMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/BoardMenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/RewardMenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RewardMenuManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +112,22 @@
       <option name="project" value="LOCAL" />
       <updated>1732206901652</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Gson to lib folder">
+      <option name="closed" value="true" />
+      <created>1732504102586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732504102586</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Old Version Of Jeopardy added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Old Version Of Jeopardy added" />
+    <MESSAGE value="Added Gson to lib folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Gson to lib folder" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
