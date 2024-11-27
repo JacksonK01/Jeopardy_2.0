@@ -2,6 +2,7 @@ package screen;
 
 import impl.JeopardyBoard;
 import intr.IBoard;
+import intr.IDrawable;
 import intr.ISubject;
 import menu.*;
 import intr.ITickable;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class Screen extends JFrame implements ActionListener, Runnable {
     public final static Color JEOPARDY_BLUE = new Color(4, 16, 84);
@@ -683,7 +685,9 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        allMenus.forEach(ITickable::tick);
+        if(currentMenu != null) {
+            currentMenu.draw(g);
+        }
         g.dispose();
     }
 }

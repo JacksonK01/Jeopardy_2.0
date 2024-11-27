@@ -31,6 +31,8 @@ public class PlayerMenuManager extends AbstractMenu {
 
     int amountVisible = 0;
 
+    private JLabel title;
+
 
 
     public PlayerMenuManager(Screen screen) {
@@ -42,6 +44,8 @@ public class PlayerMenuManager extends AbstractMenu {
 
 
         JLabel title = new JLabel();
+
+        this.title = title;
 
         JButtonListener back = new JButtonListener("<= Back", (e) -> {
             screen.setContentPane(screen.getStartMenu());
@@ -148,7 +152,12 @@ public class PlayerMenuManager extends AbstractMenu {
 
     @Override
     public void draw(Graphics g) {
-
+        if(title != null) {
+            g.setColor(Color.red);
+            g.drawRect(title.getX(), title.getY(), 500, 500);
+            System.out.println("Trying to draw red");
+        }
+        System.out.println("Trying to draw red");
     }
 
     @Override
