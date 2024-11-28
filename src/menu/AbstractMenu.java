@@ -40,7 +40,6 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
         background.setBounds(0, 0, width, height);
         foreground.setBounds(0, 0, width, height);
 
-        background.setBackground(Color.BLUE);
         foreground.setOpaque(false);
 
         this.pane.add(background, JLayeredPane.DEFAULT_LAYER);

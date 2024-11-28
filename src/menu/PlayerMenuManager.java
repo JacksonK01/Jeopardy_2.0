@@ -31,10 +31,6 @@ public class PlayerMenuManager extends AbstractMenu {
 
     int amountVisible = 0;
 
-    private JLabel title;
-
-
-
     public PlayerMenuManager(Screen screen) {
         super(screen);
 
@@ -44,8 +40,6 @@ public class PlayerMenuManager extends AbstractMenu {
 
 
         JLabel title = new JLabel();
-
-        this.title = title;
 
         JButtonListener back = new JButtonListener("<= Back", (e) -> {
             screen.setContentPane(screen.getStartMenu());
@@ -98,7 +92,7 @@ public class PlayerMenuManager extends AbstractMenu {
         ButtonConfigure.configure().setX(0).setWidth(30).setHeight(10).setY(0).finish(back, screen, addPlayers);
         ButtonConfigure.configure().setX(2).setWidth(30).setHeight(10).setY(0).finish(reset, screen, addPlayers);
         ButtonConfigure.configure().setX(0).setWidth(60).setHeight(20).setY(7).setNorth(north).finish(removePlayer, screen, addPlayers);
-        ButtonConfigure.configure().setX(1).setY(7).setWidth(60).setHeight(30).setNorth(north).setEast(25).setWest(25).finish(confirm, screen, addPlayers);
+        ButtonConfigure.configure().setX(1).setWidth(200).setHeight(30).setY(7).setNorth(north).finish(confirm, screen, addPlayers);
         ButtonConfigure.configure().setX(2).setWidth(60).setHeight(20).setY(7).setNorth(north).finish(addPlayer, screen, addPlayers);
 
         addPlayers.setBounds(0, 0, width, height);
@@ -122,7 +116,7 @@ public class PlayerMenuManager extends AbstractMenu {
 
     @Override
     public JPanel addBackground() {
-        return new JBackgroundPanel("player_select.jpg");
+        return new JBackgroundPanel("player_select1.jpg");
     }
 
     @Override
@@ -152,12 +146,12 @@ public class PlayerMenuManager extends AbstractMenu {
 
     @Override
     public void draw(Graphics g) {
-        if(title != null) {
-            g.setColor(Color.red);
-            g.drawRect(title.getX(), title.getY(), 500, 500);
-            System.out.println("Trying to draw red");
-        }
-        System.out.println("Trying to draw red");
+//        if(title != null) {
+//            g.setColor(Color.red);
+//            g.fillRect(title.getX(), title.getY(), 500, 500);
+//            System.out.println("Trying to draw red");
+//        }
+//        System.out.println("Trying to draw red");
     }
 
     @Override
@@ -174,8 +168,8 @@ public class PlayerMenuManager extends AbstractMenu {
     //n is both the y value and number for player
     private void playerTextFieldCreator(int n, int x, int y, JPanel panel) {
         JTextField enterPlayer = new JTextField();
-        TextFieldConfigure.configure().setText("Enter Player " + (n) + " Here").setColumn(25).setX(x)
-                .setNorth(10).setEast(10).setSouth(10).setWest(10).setSize(15).setHeight(20).setY(y).confirm(enterPlayer, screen, panel);
+        TextFieldConfigure.configure().setText("Enter Player " + (n) + " Here").setColumn(20).setWidth(100).setX(x)
+                .setNorth(10).setEast(0).setSouth(10).setWest(35).setSize(15).setHeight(20).setY(y).confirm(enterPlayer, screen, panel);
         textFields.add(enterPlayer);
         if(textFields.size() > MAX_PER_ROW) {
             enterPlayer.setVisible(false);

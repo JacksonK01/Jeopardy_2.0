@@ -2,10 +2,8 @@ package screen;
 
 import impl.JeopardyBoard;
 import intr.IBoard;
-import intr.IDrawable;
 import intr.ISubject;
 import menu.*;
-import intr.ITickable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Consumer;
 
 public class Screen extends JFrame implements ActionListener, Runnable {
     public final static Color JEOPARDY_BLUE = new Color(4, 16, 84);
@@ -37,6 +34,8 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     private final AbstractMenu questionMenu;
     private final AbstractMenu playerMenu;
     private final AbstractMenu rewardMenu;
+    private final AbstractMenu loadMenu;
+    private final AbstractMenu questionCreator;
 
     private String fileToOpen = DEFAULT_FILE_TO_OPEN;
 
@@ -117,8 +116,6 @@ public class Screen extends JFrame implements ActionListener, Runnable {
 
         winningScreenRegister();
         createQuestionRegister();
-        loadScreenRegister();
-        playerScreenRegister();
 
         jeopardyBoard = new JeopardyBoard();
 
@@ -127,6 +124,8 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         questionMenu = new QuestionMenuManager(this);
         playerMenu = new PlayerMenuManager(this);
         rewardMenu = new RewardMenuManager(this);
+        loadMenu = new LoadMenuManager(this);
+        questionCreator = new QuestionsCreatorMenu(this);
 
         setContentPane(startMenu);
 
@@ -145,7 +144,6 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         currentMenu = menu;
         setContentPane(menu.getPane());
     }
-
 
     public void createQuestionRegister() {
         JPanel background = new JPanel();
@@ -218,83 +216,6 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         createQuestionScreen.add(background, JLayeredPane.DEFAULT_LAYER);
         createQuestionScreen.add(info, JLayeredPane.PALETTE_LAYER);
         createQuestionScreen.setBounds(0, 0, 960, 720);
-    }
-
-    public void loadScreenRegister() {
-        JPanel background = new JPanel();
-        background.setBackground(new Color(4, 16, 84));
-        background.setBounds(0, 0, 960, 720);
-
-        JPanel info = new JPanel();
-        info.setLayout(layout);
-        enterLoadFile = new JTextField("default.txt", 30);
-        enterLoadFile.setFont(new Font("Century Gothic", Font.BOLD, 15));
-
-        gbc.gridx = 0;
-        gbc.insets = new Insets(10, 10, 10, 10);
-        gbc.anchor = GridBagConstraints.CENTER;
-        gbc.gridy = 1;
-        info.add(enterLoadFile, gbc);
-
-        registerText(loadScreenText, "Enter Jeopardy Board File:", 255, 255, 255, "Century Gothic", Font.BOLD, 30, 0, 0, 100, 0, 0, 0, 50, 0, info);
-        registerText(statusOfFileLoaded, "default.txt Currently Loaded", 255, 255, 255, "Century Gothic", Font.BOLD, 14, 0, 3, 100, 0, 100, 0, 0, 0, info);
-
-        registerButton(loadConfirmButton, 1, 1, 100, 30, 10, 0, 0, 0, info);
-        registerButton(exit, 0, 2, 100, 30, 10, 0, 0, 0, info);
-        info.setBounds(0, 0, 960, 720);
-        info.setOpaque(false);
-
-        loadScreen.add(background, JLayeredPane.DEFAULT_LAYER);
-        loadScreen.add(info, JLayeredPane.PALETTE_LAYER);
-        loadScreen.setBounds(0, 0, 960, 720);
-    }
-
-    public void playerScreenRegister() {
-        JPanel background = new JPanel();
-        background.setBackground(new Color(4, 16, 84));
-        background.setBounds(0, 0, 960, 720);
-
-        JPanel info = new JPanel();
-        info.setLayout(layout);
-        playerOneEnter = new JTextField("Enter Player 1 here", 25);
-        playerTwoEnter = new JTextField("Enter Player 2 here", 25);
-        playerThreeEnter = new JTextField("Enter Player 3 here", 25);
-        playerFourEnter = new JTextField("Enter Player 4 here", 25);
-        playerFiveEnter = new JTextField("Enter Player 5 here", 25);
-        playerOneEnter.setFont(new Font("Century Gothic", Font.BOLD, 20));
-        playerTwoEnter.setFont(new Font("Century Gothic", Font.BOLD, 20));
-        playerThreeEnter.setFont(new Font("Century Gothic", Font.BOLD, 20));
-        playerFourEnter.setFont(new Font("Century Gothic", Font.BOLD, 20));
-        playerFiveEnter.setFont(new Font("Century Gothic", Font.BOLD, 20));
-
-        gbc.gridx = 0;
-
-        gbc.insets = new Insets(10, 10, 10, 10);
-
-        gbc.anchor = GridBagConstraints.CENTER;
-
-        gbc.gridy = 1;
-        info.add(playerOneEnter, gbc);
-        gbc.gridy = 2;
-        info.add(playerTwoEnter, gbc);
-        gbc.gridy = 3;
-        info.add(playerThreeEnter, gbc);
-        gbc.gridy = 4;
-        info.add(playerFourEnter, gbc);
-        gbc.gridy = 5;
-        info.add(playerFiveEnter, gbc);
-
-        JLabel playerScreenText = new JLabel();
-        registerText(playerScreenText, "Enter Player Names:", 255, 255, 255, "Century Gothic", Font.BOLD, 30, 0, 0, 100, 0, 0, 0, 50, 0, info);
-
-        confirm = new JButton("Confirm Names");
-        registerButton(confirm, 0, 6, 100, 30, 10, 0, 0, 0, info);
-        info.setBounds(0, 0, 960, 720);
-        info.setOpaque(false);
-
-        playerScreen.add(background, JLayeredPane.DEFAULT_LAYER);
-        playerScreen.add(info, JLayeredPane.PALETTE_LAYER);
-        playerScreen.setBounds(0, 0, 960, 720);
     }
 
     public void rewardPointsMenuRegister() {
@@ -622,6 +543,14 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         return rewardMenu;
     }
 
+    public AbstractMenu getLoadMenu() {
+        return loadMenu;
+    }
+
+    public AbstractMenu getQuestionCreator() {
+        return questionCreator;
+    }
+
     public IBoard<ISubject> getJeopardyBoard() {
         return jeopardyBoard;
     }
@@ -631,7 +560,12 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     }
 
     public void setFileToOpen(String fileToOpen) {
-        this.fileToOpen = fileToOpen;
+        String json = ".json";
+        if(!fileToOpen.contains(json)) {
+            fileToOpen += json;
+        }
+
+        this.fileToOpen = fileToOpen.toLowerCase();
     }
 
     @Override
