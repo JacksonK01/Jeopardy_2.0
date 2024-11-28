@@ -134,6 +134,10 @@ public class TextConfigure {
     }
 
     public void confirm(JLabel label, Screen screen, JPanel panel) {
+        confirm(label, screen, panel, GridBagConstraints.CENTER);
+    }
+
+    public void confirm(JLabel label, Screen screen, JPanel panel, int layout) {
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridx = x;
@@ -144,7 +148,7 @@ public class TextConfigure {
 
         gbc.insets = new Insets(north, west, south, east);
 
-        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.anchor = layout;
 
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setVerticalAlignment(SwingConstants.CENTER);

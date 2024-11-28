@@ -92,6 +92,15 @@ public class BoardMenuManager extends AbstractMenu {
 
         int x = 0;
         int yOffset = 1;
+
+//        int y = 0;
+//
+//        for(ISubject s : subjects) {
+//            if(s.getQuestions().size() > y) {
+//                y = s.getQuestions().size();
+//            }
+//        }
+
         for(int i = 0; i < players.size(); i++) {
             IPlayer player = players.get(i);
             int y = subjects.get(i % maxPlayersForColumn).getQuestions().size() + yOffset;

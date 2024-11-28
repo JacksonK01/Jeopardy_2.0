@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JeopardySubject implements ISubject {
-    private final String title;
+    private String title;
     private List<IQuestion> questions;
 
     public JeopardySubject(String title) {
@@ -28,6 +28,11 @@ public class JeopardySubject implements ISubject {
     @Override
     public List<IQuestion> getQuestions() {
         return questions;
+    }
+
+    @Override
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override

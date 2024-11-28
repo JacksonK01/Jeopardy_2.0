@@ -165,10 +165,9 @@ public class PlayerMenuManager extends AbstractMenu {
         }
     }
 
-    //n is both the y value and number for player
     private void playerTextFieldCreator(int n, int x, int y, JPanel panel) {
         JTextField enterPlayer = new JTextField();
-        TextFieldConfigure.configure().setText("Enter Player " + (n) + " Here").setColumn(20).setWidth(100).setX(x)
+        TextFieldConfigure.configure().setText("Player " + (n)).setColumn(20).setWidth(100).setX(x)
                 .setNorth(10).setEast(0).setSouth(10).setWest(35).setSize(15).setHeight(20).setY(y).confirm(enterPlayer, screen, panel);
         textFields.add(enterPlayer);
         if(textFields.size() > MAX_PER_ROW) {

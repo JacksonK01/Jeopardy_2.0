@@ -114,7 +114,15 @@ public class ButtonConfigure {
         finish(button, panel, screen.getLayout());
     }
 
+    public void finish(JButton button, Screen screen, JPanel panel, int gridBagAlignment) {
+        finish(button, panel, screen.getLayout(), gridBagAlignment);
+    }
+
     public void finish(JButton button, JPanel panel, GridBagLayout layout) {
+        finish(button, panel, layout, GridBagConstraints.CENTER);
+    }
+
+    public void finish(JButton button, JPanel panel, GridBagLayout layout, int gridBagAlignment) {
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridx = x;
@@ -125,7 +133,7 @@ public class ButtonConfigure {
 
         gbc.insets = new Insets(north, west, south, east);
 
-        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.anchor = gridBagAlignment;
 
         layout.setConstraints(button, gbc);
         panel.add(button);

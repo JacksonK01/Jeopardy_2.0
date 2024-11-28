@@ -565,7 +565,7 @@ public class Screen extends JFrame implements ActionListener, Runnable {
             fileToOpen += json;
         }
 
-        this.fileToOpen = fileToOpen.toLowerCase();
+        this.fileToOpen = fileToOpen.toLowerCase().strip().replaceAll(" ", "_");
     }
 
     @Override
