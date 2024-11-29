@@ -35,8 +35,6 @@ public class QuestionsCreatorMenu extends AbstractMenu {
     //All panels except background and resetAndExit
     private final List<JPanel> allPanels;
 
-    private final List<JLabel> allSubjectLabels;
-
     private final List<Pair<ISubject, JLabel>> allSubjectsAndLabels;
 
     private boolean hasDisplayedError = false;
@@ -45,12 +43,14 @@ public class QuestionsCreatorMenu extends AbstractMenu {
     //Used for the edit screen
     private int editIndex = 0;
 
+    //Used to keep track of the y cord
+    private int subjectY = 1;
+
     public QuestionsCreatorMenu(Screen screen) {
         super(screen);
         subjects = new ArrayList<>();
         questions = new ArrayList<>();
         allPanels = new ArrayList<>();
-        allSubjectLabels = new ArrayList<>();
         allSubjectsAndLabels = new ArrayList<>();
 
         createSubjectPanel = new JPanel();
@@ -86,10 +86,11 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
     @Override
     public void onReset() {
+        subjectY = 1;
+
         subjects.clear();
         questions.clear();
         allSubjectsAndLabels.clear();
-        allSubjectLabels.clear();
         foreground.removeAll();
         screen.setFileToOpen("default.json");
         setupForeground();
@@ -189,7 +190,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         ButtonConfigure.configure().setWidth(100).setHeight(15).setY(0).setX(1)
                 .finish(addSubject, screen, foreground);
 
-        TextConfigure.configure().setText("Created Subjects:").setSize(30).setSize(30).setStyle(Font.BOLD).setEast(50).confirm(createSubject, screen, foreground);
+        TextConfigure.configure().setText("Create Subjects:").setSize(30).setSize(30).setStyle(Font.BOLD).setEast(50).confirm(createSubject, screen, foreground);
     }
 
     private void setupTopButtons() {
@@ -285,17 +286,18 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         buttonPanel.add(addQuestion);
         buttonPanel.add(edit);
 
-        int y = subjects.size();
-
         gbc.gridx = 1;
-        gbc.gridy = y;
+        gbc.gridy = subjectY;
 
         gbc.fill = GridBagConstraints.NONE;
 
         foreground.add(buttonPanel, gbc);
 
-        TextConfigure.configure().setX(0).setY(y).setText(subjectCreated.getTitle() + " Qs: " + subjectCreated.getQuestions().size()).setSize(20).confirm(newSubject, screen, foreground, GridBagConstraints.WEST);
-        allSubjectLabels.add(newSubject);
+        TextConfigure.configure().setX(0).setY(subjectY).setText(subjectCreated.getTitle() + " Qs: " + subjectCreated.getQuestions().size()).setSize(20).confirm(newSubject, screen, foreground, GridBagConstraints.WEST);
+        Pair<ISubject, JLabel> pair = new Pair<>(subjectCreated, newSubject);
+        allSubjectsAndLabels.add(pair);
+        subjectY++;
+
 
         JButtonListener delete = new JButtonListener("Delete", (e) -> {
             subjects.remove(subjectCreated);
@@ -303,17 +305,43 @@ public class QuestionsCreatorMenu extends AbstractMenu {
             foreground.remove(buttonPanel);
 
             foreground.remove((Component) e.getSource());
-            allSubjectLabels.remove(newSubject);
+            allSubjectsAndLabels.remove(findLabelToDelete(subjectCreated));
             subjects.remove(subjectCreated);
         });
 
         buttonPanel.add(delete);
     }
 
+    private Pair<ISubject, JLabel> findLabelToDelete(ISubject createdSubject) {
+        for(Pair<ISubject, JLabel> pair : allSubjectsAndLabels) {
+            if(pair.first() == createdSubject) {
+                return pair;
+            }
+        }
+        return new Pair<>(createdSubject, new JLabel(createdSubject.getTitle()));
+    }
+
+    private void refreshSubjectsY() {
+        for(Pair<ISubject, JLabel> pair : allSubjectsAndLabels) {
+            ISubject subject = pair.first();
+            JLabel label = pair.second();
+
+            int y = subjects.size();
+
+            foreground.remove(label);
+
+            TextConfigure.configure().setX(0).setY(y)
+                    .setText(subject.getTitle() + " Qs: " + subject.getQuestions().size())
+                    .setSize(20).confirm(label, screen, foreground, GridBagConstraints.WEST);
+        }
+    }
+
     private void refreshSubjectQuestionSizes() {
-        for(int i = 0; i < subjects.size(); i++) {
-            ISubject s = subjects.get(i);
-            allSubjectLabels.get(i).setText(s.getTitle() + " Qs: " + s.getQuestions().size());
+        for(Pair<ISubject, JLabel> pair : allSubjectsAndLabels) {
+            ISubject subject = pair.first();
+            JLabel label = pair.second();
+
+            label.setText(subject.getTitle() + " Qs: " + subject.getQuestions().size());
         }
     }
 
@@ -334,6 +362,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
                 int qValue = Integer.parseInt(valueField.getText());
                 setPanelVisible(foreground);
                 subjectToAddTo.addQuestion(new JeopardyQuestion(questionField.getText(), answerField.getText(), qValue));
+                refreshSubjectQuestionSizes();
                 topButtons.setVisible(true);
                 subjectAddQuestion.removeAll();
                 hasDisplayedError = false;

@@ -83,7 +83,15 @@ public class JsonHandler {
             file += ".json";
         }
 
-        try(FileWriter fileWriter = new FileWriter(DIRECTORY + "/SavedBoards/" + file)) {
+        //Makes sure the directory exists
+        File directory = new File(DIRECTORY + "/SavedBoards");
+        if (!directory.exists()) {
+            if (!directory.mkdirs()) {
+                throw new RuntimeException("Failed to create directory: " + directory.getAbsolutePath());
+            }
+        }
+
+        try(FileWriter fileWriter = new FileWriter(directory.getAbsolutePath() + "/" + file)) {
             fileWriter.write(json);
             fileWriter.flush();
         } catch (IOException e) {
