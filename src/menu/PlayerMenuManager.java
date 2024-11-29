@@ -7,6 +7,7 @@ import intr.ISubject;
 import screen.Screen;
 import util.JBackgroundPanel;
 import util.JButtonListener;
+import util.JsonHandler;
 import util.configure.ButtonConfigure;
 import util.configure.TextConfigure;
 import util.configure.TextFieldConfigure;

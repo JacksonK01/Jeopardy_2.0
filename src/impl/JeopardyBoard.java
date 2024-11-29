@@ -87,7 +87,7 @@ public class JeopardyBoard implements IBoard<ISubject> {
             subjects = createDefaultSubjects();
             JsonHandler.exportJsonToFile(JsonHandler.serializeBoard(this), "default");
         } else {
-            subjects = JsonHandler.deSerializeSubjects(fileToOpen, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
+            subjects = JsonHandler.deSerializeSubjects(json, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
         }
     }
 

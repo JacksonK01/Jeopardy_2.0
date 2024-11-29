@@ -73,7 +73,7 @@ public abstract class AbstractMenu implements IBackgroundForeground, ITickable, 
 
     //Gets called when the Screen isn't active pane anymore
     //Meant to be overrided
-    public void OnRemove() {}
+    public void onRemove() {}
 
     //Called when everything should be reset to init state
     public abstract void onReset();

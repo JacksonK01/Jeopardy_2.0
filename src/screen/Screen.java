@@ -17,7 +17,7 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     public final static Color JEOPARDY_BLUE = new Color(4, 16, 84);
     public final static Color JEOPARDY_YELLOW = new Color(255,255,0);
     public final static String DEFAULT_FILE_TO_OPEN = "default.json";
-    private final static int FPS = 60;
+    public final static int FPS = 60;
 
     private int fpsCount = 0;
 
@@ -36,6 +36,7 @@ public class Screen extends JFrame implements ActionListener, Runnable {
     private final AbstractMenu rewardMenu;
     private final AbstractMenu loadMenu;
     private final AbstractMenu questionCreator;
+    private final AbstractMenu winningMenu;
 
     private String fileToOpen = DEFAULT_FILE_TO_OPEN;
 
@@ -126,6 +127,7 @@ public class Screen extends JFrame implements ActionListener, Runnable {
         rewardMenu = new RewardMenuManager(this);
         loadMenu = new LoadMenuManager(this);
         questionCreator = new QuestionsCreatorMenu(this);
+        winningMenu = new WinningMenu(this);
 
         setContentPane(startMenu);
 
@@ -138,7 +140,7 @@ public class Screen extends JFrame implements ActionListener, Runnable {
 
     public void setContentPane(AbstractMenu menu) {
         if(currentMenu != null) {
-            currentMenu.OnRemove();
+            currentMenu.onRemove();
         }
         menu.onSetActive();
         currentMenu = menu;
@@ -549,6 +551,10 @@ public class Screen extends JFrame implements ActionListener, Runnable {
 
     public AbstractMenu getQuestionCreator() {
         return questionCreator;
+    }
+
+    public AbstractMenu getWinningMenu() {
+        return winningMenu;
     }
 
     public IBoard<ISubject> getJeopardyBoard() {

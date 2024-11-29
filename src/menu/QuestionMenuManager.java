@@ -57,7 +57,13 @@ public class QuestionMenuManager extends AbstractMenu {
             nextButton.setVisible(false);
             question.setVisible(true);
             answer.setVisible(false);
+
+            if(screen.getRewardMenu() instanceof RewardMenuManager rewardMenuManager) {
+                rewardMenuManager.setCurrentQuestion(currentQuestion);
+            }
+
             screen.setContentPane(screen.getRewardMenu());
+
         });
 
         ButtonConfigure.configure().setY(1).setWidth(75).setHeight(50).setNorth(50).finish(answerButton, screen, fg);

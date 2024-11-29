@@ -77,7 +77,7 @@ public class JsonHandler {
     }
 
     public static void exportJsonToFile(@NotNull String json, @NotNull String fileName) {
-        String file = fileName.toLowerCase();
+        String file = fileName;
 
         if(!file.contains(".json")) {
             file += ".json";
@@ -93,7 +93,7 @@ public class JsonHandler {
 
     @Nullable
     public static String readJsonFromFile(String fileName) {
-        String file = fileName.toLowerCase();
+        String file = fileName;
 
         if(!file.contains(".json")) {
             file += ".json";
@@ -110,7 +110,7 @@ public class JsonHandler {
             }
             return jsonBuilder.toString();
         } catch (Exception e) {
-            System.out.println("Error loading .json file");
+            System.out.println("Error loading json file");
         }
 
         return null;

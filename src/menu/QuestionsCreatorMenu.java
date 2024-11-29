@@ -10,6 +10,7 @@ import screen.Screen;
 import util.JBackgroundPanel;
 import util.JButtonListener;
 import util.JsonHandler;
+import util.Pair;
 import util.configure.ButtonConfigure;
 import util.configure.TextConfigure;
 import util.configure.TextFieldConfigure;
@@ -17,7 +18,6 @@ import util.configure.TextFieldConfigure;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class QuestionsCreatorMenu extends AbstractMenu {
@@ -37,6 +37,8 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
     private final List<JLabel> allSubjectLabels;
 
+    private final List<Pair<ISubject, JLabel>> allSubjectsAndLabels;
+
     private boolean hasDisplayedError = false;
     private boolean hasEditDisplayedError = false;
 
@@ -49,6 +51,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         questions = new ArrayList<>();
         allPanels = new ArrayList<>();
         allSubjectLabels = new ArrayList<>();
+        allSubjectsAndLabels = new ArrayList<>();
 
         createSubjectPanel = new JPanel();
         initPanel(createSubjectPanel, false, JLayeredPane.MODAL_LAYER);
@@ -71,6 +74,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         setupCreateSubject();
         setupTopButtons();
         setupConfirmBoard();
+        setupOpen();
 
         allPanels.add(createSubjectPanel);
         allPanels.add(foreground);
@@ -84,8 +88,10 @@ public class QuestionsCreatorMenu extends AbstractMenu {
     public void onReset() {
         subjects.clear();
         questions.clear();
+        allSubjectsAndLabels.clear();
         allSubjectLabels.clear();
         foreground.removeAll();
+        screen.setFileToOpen("default.json");
         setupForeground();
     }
 
@@ -114,6 +120,45 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         });
     }
 
+    private void setupOpen() {
+        JLabel enter = new JLabel();
+        TextConfigure.configure().setText("Enter Jeopardy Board To Open:").setSize(30).setStyle(Font.BOLD).setWidth(100).setSouth(25).confirm(enter, screen, openFile);
+
+        JLabel currentLoadedFile = new JLabel();
+
+        TextConfigure.configure().setText("").setY(3).setStyle(Font.BOLD).setSize(15).setWidth(100).setNorth(100).confirm(currentLoadedFile, screen, openFile);
+
+        JTextField enterName = new JTextField();
+
+        TextFieldConfigure.configure().setText(screen.getFileToOpen()).setSize(15).setY(1)
+                .setHeight(25).setWidth(500).setStyle(Font.BOLD)
+                .setNorth(10).setEast(10).setSouth(10).setWest(10).confirm(enterName, screen, openFile);
+
+        JButtonListener open = new JButtonListener((e) -> {
+            screen.setFileToOpen(enterName.getText());
+            currentLoadedFile.setText(screen.getFileToOpen() + " Loaded");
+
+            String board = JsonHandler.readJsonFromFile(screen.getFileToOpen());
+            assert board != null;
+            List<ISubject> subjectsIO = JsonHandler.deSerializeSubjects(board, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
+
+            subjectsIO.forEach((s) -> {
+                subjects.add(s);
+                onSubjectCreated(s);
+            });
+        });
+
+        JButtonListener back = new JButtonListener((e) -> {
+            setPanelVisible(foreground);
+            currentLoadedFile.setText("");
+        });
+
+
+        ButtonConfigure.configure().setX(0).setY(1).setWidth(90).setHeight(25).setNorth(125).setText("Open").setWest(10).finish(open, screen, openFile);
+        ButtonConfigure.configure().setX(0).setY(2).setWidth(60).setHeight(25).setNorth(25).setText("Back").setWest(10).finish(back, screen, openFile);
+
+    }
+
     private void setupCreateSubject() {
         JTextField enterTitle = new JTextField();
 
@@ -126,13 +171,17 @@ public class QuestionsCreatorMenu extends AbstractMenu {
             setPanelVisible(foreground);
         });
 
+        JButtonListener back = new JButtonListener("Back", (e) -> {
+            setPanelVisible(foreground);
+        });
+
         TextConfigure.configure().setStyle(Font.BOLD).setY(0).setSouth(50).setSize(50).setText("Subject Name: ").confirm(enterLabel, screen, createSubjectPanel);
 
         TextFieldConfigure.configure().setColumn(25).setWidth(100).setHeight(25).setText("Enter Subject Name")
                 .setX(0).setY(1).setSize(15).confirm(enterTitle, screen, createSubjectPanel);
 
-        ButtonConfigure.configure().setY(2).setWidth(30).setHeight(10).setNorth(50).finish(confirm, screen, createSubjectPanel);
-
+        ButtonConfigure.configure().setY(1).setWidth(40).setHeight(20).setNorth(175).finish(confirm, screen, createSubjectPanel);
+        ButtonConfigure.configure().setY(2).setWidth(30).setHeight(10).setNorth(25).finish(back, screen, createSubjectPanel);
     }
 
     private void setupForeground() {
@@ -162,14 +211,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         });
 
         JButtonListener open = new JButtonListener((e) -> {
-            String board = JsonHandler.readJsonFromFile(screen.getFileToOpen());
-            assert board != null;
-            List<ISubject> subjectsIO = JsonHandler.deSerializeSubjects(board, JeopardySubjectFactory.getFactory(), JeopardyQuestionFactory.getFactory());
-
-            subjectsIO.forEach((s) -> {
-                subjects.add(s);
-                onSubjectCreated(s);
-            });
+            setPanelVisible(openFile);
         });
 
         ButtonConfigure.configure().setX(0).setText("Exit").setSouth(600).finish(exit, screen, topButtons);
@@ -181,7 +223,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
     private void setupConfirmBoard() {
         JLabel enter = new JLabel();
-        TextConfigure.configure().setText("Enter Jeopardy Board File:").setSize(30).setStyle(Font.BOLD).setWidth(100).setSouth(50).confirm(enter, screen, confirmBoard);
+        TextConfigure.configure().setText("Enter Jeopardy Board Name:").setSize(30).setStyle(Font.BOLD).setWidth(100).setSouth(25).confirm(enter, screen, confirmBoard);
 
         JLabel currentLoadedFile = new JLabel();
 
@@ -196,21 +238,22 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         JButtonListener confirm = new JButtonListener((e) -> {
             screen.setFileToOpen(enterName.getText());
             currentLoadedFile.setText(screen.getFileToOpen() + " Saved");
+            JsonHandler.exportJsonToFile(JsonHandler.serializeSubjects(this.subjects), screen.getFileToOpen());
         });
-
-        ButtonConfigure.configure().setX(1).setY(1).setWidth(60).setHeight(25).setText("Confirm").setWest(10).finish(confirm, screen, confirmBoard);
 
         JButtonListener back = new JButtonListener((e) -> {
-            enterName.setText("Enter in name of Jeopardy Board:");
             setPanelVisible(foreground);
+            currentLoadedFile.setText("");
         });
 
-        ButtonConfigure.configure().setX(0).setY(2).setWidth(60).setHeight(25).setText("Back").setWest(10).finish(back, screen, confirmBoard);
 
-        JsonHandler.exportJsonToFile(JsonHandler.serializeSubjects(this.subjects), screen.getFileToOpen());
+        ButtonConfigure.configure().setX(0).setY(1).setWidth(90).setHeight(25).setNorth(125).setText("Save").setWest(10).finish(confirm, screen, confirmBoard);
+        ButtonConfigure.configure().setX(0).setY(2).setWidth(60).setHeight(25).setNorth(25).setText("Back").setWest(10).finish(back, screen, confirmBoard);
+
     }
 
     private void setPanelVisible(JPanel panel) {
+        refreshSubjectQuestionSizes();
         allPanels.forEach((p) -> {
             p.setVisible(p == panel);
         });
@@ -256,27 +299,27 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
         foreground.add(buttonPanel, gbc);
 
+        TextConfigure.configure().setX(0).setY(y).setText(subjectCreated.getTitle() + " Qs: " + subjectCreated.getQuestions().size()).setSize(20).confirm(newSubject, screen, foreground, GridBagConstraints.WEST);
+        allSubjectLabels.add(newSubject);
+
         JButtonListener delete = new JButtonListener("Delete", (e) -> {
             subjects.remove(subjectCreated);
             foreground.remove(newSubject);
             foreground.remove(buttonPanel);
+
             foreground.remove((Component) e.getSource());
+            allSubjectLabels.remove(newSubject);
+            subjects.remove(subjectCreated);
         });
 
         buttonPanel.add(delete);
-
-        TextConfigure.configure().setX(0).setY(y).setText(subjectCreated.getTitle() + " Qs: " + subjectCreated.getQuestions().size()).setSize(20).confirm(newSubject, screen, foreground, GridBagConstraints.WEST);
-        allSubjectLabels.add(newSubject);
-
-
     }
 
     private void refreshSubjectQuestionSizes() {
-        allSubjectLabels.forEach(l -> {
-            subjects.forEach(s -> {
-                l.setText(s.getTitle() + " Qs: " + s.getQuestions().size());
-            });
-        });
+        for(int i = 0; i < subjects.size(); i++) {
+            ISubject s = subjects.get(i);
+            allSubjectLabels.get(i).setText(s.getTitle() + " Qs: " + s.getQuestions().size());
+        }
     }
 
     private void onCreateQuestion(ISubject subjectToAddTo) {
@@ -380,6 +423,12 @@ public class QuestionsCreatorMenu extends AbstractMenu {
             }
         });
 
+        JButtonListener delete = new JButtonListener("Delete", (e) -> {
+            subjectToEdit.getQuestions().remove(currentQuestion);
+            refreshSubjectQuestionSizes();
+            exitEdit();
+        });
+
         TextConfigure.configure().setText("For \"" + subjectToEdit.getTitle() + "\":").setY(0).setSize(25).setStyle(Font.BOLD).confirm(subject, screen, subjectEdit);
 
         TextConfigure.configure().setText("Page: " + (editIndex + 1) + "/" + total).setY(0).setX(1).setSize(25).setStyle(Font.BOLD).setWidth(20).setHeight(20).confirm(pageTracker, screen, subjectEdit);
@@ -412,7 +461,22 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
         subjectEdit.add(buttonPanel, gbc);
 
-        ButtonConfigure.configure().setX(1).setY(5).finish(exit, screen, subjectEdit);
+        JPanel buttonPanel2 = new JPanel();
+        buttonPanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
+        buttonPanel2.setOpaque(false);
+        buttonPanel2.setVisible(true);
+
+        GridBagConstraints gbc2 = new GridBagConstraints();
+
+        buttonPanel2.add(delete);
+        buttonPanel2.add(exit);
+
+        gbc2.gridx = 1;
+        gbc2.gridy = 5;
+
+        gbc2.fill = GridBagConstraints.NONE;
+
+        subjectEdit.add(buttonPanel2, gbc2);
     }
 
     private void exitEdit() {

@@ -20,6 +20,10 @@ import java.util.List;
 
 public class BoardMenuManager extends AbstractMenu {
     private boolean hasInit = false;
+    private List<JLabel> playerLabels;
+    private List<JButton> allBoardButtons;
+    private int totalBoardButtons = 0;
+    private boolean hasSetWinning = false;
 
     public BoardMenuManager(Screen screen) {
         super(screen);
@@ -42,7 +46,18 @@ public class BoardMenuManager extends AbstractMenu {
 
     @Override
     public void tick() {
+        List<IPlayer> players = screen.getJeopardyBoard().getPlayers();
 
+        if(players == null || playerLabels == null) {
+            return;
+        }
+
+        for(int i = 0; i < players.size(); i++) {
+            JLabel l = playerLabels.get(i);
+            IPlayer p = players.get(i);
+
+            l.setText(p.getNames() + ": $" + p.getScore());
+        }
     }
 
     @Override
@@ -50,6 +65,8 @@ public class BoardMenuManager extends AbstractMenu {
         if(hasInit) {
             return;
         }
+
+        allBoardButtons = new ArrayList<>();
 
         List<ISubject> subjects = screen.getJeopardyBoard().getSubjects();
 
@@ -71,6 +88,7 @@ public class BoardMenuManager extends AbstractMenu {
                 JButton button = new JButton();
 
                 ActionListener action = (e) -> {
+                    totalBoardButtons--;
                     QuestionMenuManager menu = (QuestionMenuManager) screen.getQuestionMenu();
                     button.setVisible(false);
                     menu.setQuestion(q);
@@ -78,6 +96,10 @@ public class BoardMenuManager extends AbstractMenu {
                 };
 
                 button.addActionListener(action);
+
+                allBoardButtons.add(button);
+
+                totalBoardButtons++;
 
                 ButtonConfigure.configure().setX(i).setY(j + 1).setText("$" + q.getValue())
                         .setWidth(90).setHeight(65)
@@ -90,16 +112,10 @@ public class BoardMenuManager extends AbstractMenu {
 
         List<IPlayer> players = screen.getJeopardyBoard().getPlayers();
 
+        playerLabels = new ArrayList<>();
+
         int x = 0;
         int yOffset = 1;
-
-//        int y = 0;
-//
-//        for(ISubject s : subjects) {
-//            if(s.getQuestions().size() > y) {
-//                y = s.getQuestions().size();
-//            }
-//        }
 
         for(int i = 0; i < players.size(); i++) {
             IPlayer player = players.get(i);
@@ -109,6 +125,8 @@ public class BoardMenuManager extends AbstractMenu {
             TextConfigure.configure().setX(x).setY(y).setText(player.getNames() + ": $" + player.getScore())
                     .setTextColor(yellow).setStyle(Font.BOLD).setSize(16).setWidth(75).setHeight(25)
                     .setBackgroundColor(blue).confirm(label, screen, foreground);
+
+            playerLabels.add(label);
 
             x++;
             if(x >= maxPlayersForColumn) {
@@ -129,4 +147,9 @@ public class BoardMenuManager extends AbstractMenu {
         hasInit = false;
         foreground.removeAll();
     }
+
+    public boolean isBoardEmpty() {
+        return totalBoardButtons <= 0;
+    }
+
 }
