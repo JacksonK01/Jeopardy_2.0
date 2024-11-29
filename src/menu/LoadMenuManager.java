@@ -23,7 +23,7 @@ public class LoadMenuManager extends AbstractMenu {
 
     @Override
     public JPanel addBackground() {
-        return new JBackgroundPanel("question_creator_menu.jpg");
+        return new JBackgroundPanel("load.jpg");
     }
 
     @Override
@@ -57,11 +57,6 @@ public class LoadMenuManager extends AbstractMenu {
         ButtonConfigure.configure().setX(0).setY(2).setWidth(60).setHeight(25).setText("Exit").setWest(10).finish(exit, screen, panel);
 
         return panel;
-    }
-
-    @Override
-    public void draw(Graphics g) {
-
     }
 
     @Override

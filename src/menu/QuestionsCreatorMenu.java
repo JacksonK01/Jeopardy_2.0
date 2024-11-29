@@ -97,7 +97,7 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
     @Override
     public JPanel addBackground() {
-        return new JBackgroundPanel("load_menu.jpg");
+        return new JBackgroundPanel("question_creator.jpg");
     }
 
     @Override
@@ -106,11 +106,6 @@ public class QuestionsCreatorMenu extends AbstractMenu {
         setupForeground();
 
         return foreground;
-    }
-
-    @Override
-    public void draw(Graphics g) {
-
     }
 
     @Override
@@ -339,7 +334,6 @@ public class QuestionsCreatorMenu extends AbstractMenu {
                 int qValue = Integer.parseInt(valueField.getText());
                 setPanelVisible(foreground);
                 subjectToAddTo.addQuestion(new JeopardyQuestion(questionField.getText(), answerField.getText(), qValue));
-                refreshSubjectQuestionSizes();
                 topButtons.setVisible(true);
                 subjectAddQuestion.removeAll();
                 hasDisplayedError = false;
@@ -425,7 +419,6 @@ public class QuestionsCreatorMenu extends AbstractMenu {
 
         JButtonListener delete = new JButtonListener("Delete", (e) -> {
             subjectToEdit.getQuestions().remove(currentQuestion);
-            refreshSubjectQuestionSizes();
             exitEdit();
         });
 

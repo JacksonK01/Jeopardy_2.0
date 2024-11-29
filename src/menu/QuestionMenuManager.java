@@ -10,8 +10,9 @@ import util.configure.TextConfigure;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.function.Consumer;
 
-public class QuestionMenuManager extends AbstractMenu {
+public class QuestionMenuManager extends AbstractMenu implements Consumer<IQuestion> {
     private JButtonListener answerButton;
     private JButtonListener nextButton;
 
@@ -58,8 +59,8 @@ public class QuestionMenuManager extends AbstractMenu {
             question.setVisible(true);
             answer.setVisible(false);
 
-            if(screen.getRewardMenu() instanceof RewardMenuManager rewardMenuManager) {
-                rewardMenuManager.setCurrentQuestion(currentQuestion);
+            if(screen.getRewardMenu() instanceof Consumer setCurrentQuestion) {
+                setCurrentQuestion.accept(currentQuestion);
             }
 
             screen.setContentPane(screen.getRewardMenu());
@@ -73,17 +74,14 @@ public class QuestionMenuManager extends AbstractMenu {
     }
 
     @Override
-    public void draw(Graphics g) {
-
-    }
-
-    @Override
     public void tick() {
         question.setText(currentQuestion.getQuestion());
         answer.setText(currentQuestion.getAnswer());
     }
 
-    public void setQuestion(IQuestion q) {
-        this.currentQuestion = q;
+    //For setting question
+    @Override
+    public void accept(IQuestion iQuestion) {
+        this.currentQuestion = iQuestion;
     }
 }

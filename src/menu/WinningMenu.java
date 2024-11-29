@@ -65,11 +65,6 @@ public class WinningMenu extends AbstractMenu {
     }
 
     @Override
-    public void draw(Graphics g) {
-
-    }
-
-    @Override
     public void tick() {
 
     }

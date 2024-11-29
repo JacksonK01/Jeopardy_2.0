@@ -146,16 +146,6 @@ public class PlayerMenuManager extends AbstractMenu {
     }
 
     @Override
-    public void draw(Graphics g) {
-//        if(title != null) {
-//            g.setColor(Color.red);
-//            g.fillRect(title.getX(), title.getY(), 500, 500);
-//            System.out.println("Trying to draw red");
-//        }
-//        System.out.println("Trying to draw red");
-    }
-
-    @Override
     public void tick() {
         addPlayers.setBounds(0, 0, width, height);
     }

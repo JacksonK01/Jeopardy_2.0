@@ -49,9 +49,4 @@ public class StartMenuManager extends AbstractMenu {
     public void tick() {
 
     }
-
-    @Override
-    public void draw(Graphics g) {
-
-    }
 }

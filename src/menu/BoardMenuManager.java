@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class BoardMenuManager extends AbstractMenu {
     private boolean hasInit = false;
@@ -40,11 +41,6 @@ public class BoardMenuManager extends AbstractMenu {
     }
 
     @Override
-    public void draw(Graphics g) {
-
-    }
-
-    @Override
     public void tick() {
         List<IPlayer> players = screen.getJeopardyBoard().getPlayers();
 
@@ -60,6 +56,7 @@ public class BoardMenuManager extends AbstractMenu {
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onSetActive() {
         if(hasInit) {
@@ -89,9 +86,14 @@ public class BoardMenuManager extends AbstractMenu {
 
                 ActionListener action = (e) -> {
                     totalBoardButtons--;
-                    QuestionMenuManager menu = (QuestionMenuManager) screen.getQuestionMenu();
+                    AbstractMenu menu = screen.getQuestionMenu();
                     button.setVisible(false);
-                    menu.setQuestion(q);
+
+                    //Has to be raw, won't compile otherwise
+                    if(menu instanceof Consumer setQuestionInMenu) {
+                        setQuestionInMenu.accept(q);
+                    }
+
                     screen.setContentPane(menu);
                 };
 

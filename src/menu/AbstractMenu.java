@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractMenu implements IBackgroundForeground, ITickable, IDrawable {
+public abstract class AbstractMenu implements IBackgroundForeground, ITickable {
     protected JLayeredPane pane;
     protected JPanel background;
     protected JPanel foreground;

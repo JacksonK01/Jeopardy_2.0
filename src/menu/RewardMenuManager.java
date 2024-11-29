@@ -14,8 +14,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
-public class RewardMenuManager extends AbstractMenu {
+public class RewardMenuManager extends AbstractMenu implements Consumer<IQuestion> {
     //5 seconds
     public static final int INTERVAL = 2;
 
@@ -127,11 +128,6 @@ public class RewardMenuManager extends AbstractMenu {
     }
 
     @Override
-    public void draw(Graphics g) {
-
-    }
-
-    @Override
     public void tick() {
         if(allButtons == null) {
             return;
@@ -150,7 +146,8 @@ public class RewardMenuManager extends AbstractMenu {
 
     }
 
-    public void setCurrentQuestion(IQuestion question) {
-        this.currentQuestion = question;
+    @Override
+    public void accept(IQuestion iQuestion) {
+        this.currentQuestion = iQuestion;
     }
 }

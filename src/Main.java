@@ -1,13 +1,13 @@
-package screen;
+import screen.Screen;
 
 public class Main {
-    public static String dirPath = System.getProperty("user.dir");
-    public static JeopardyBoardOld jeopardyBoard = new JeopardyBoardOld();
 
     public static void main(String[] args) {
-        StartUp.load();
-        Players players = new Players();
         Screen frame = new Screen();
+        frame.setVisible(true);
+
+        Thread thread = new Thread(frame);
+        thread.start();
 
 //        JeopardyBoard jeopardyBoard1 = new JeopardyBoard();
 //
