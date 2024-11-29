@@ -1,0 +1,1455 @@
+Index: SavedBoards/lily.json
+===================================================================
+diff --git a/SavedBoards/lily.json b/SavedBoards/lily.json
+deleted file mode 100644
+--- a/SavedBoards/lily.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,152 +0,0 @@
+-[
+-  {
+-    "subject_title": "Deadpool 3 ",
+-    "subject_questions": [
+-      {
+-        "question": "Who plays Wolverine?",
+-        "answer": "Hugh Jackman",
+-        "value": 100
+-      },
+-      {
+-        "question": "What TV show does deadpool refer to in the beginning of the movie and why?",
+-        "answer": "Gossip Girl, Blake Lively",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the name of the main villain",
+-        "answer": "Cassandra Nova",
+-        "value": 300
+-      },
+-      {
+-        "question": "What city was deadpool filmed in?",
+-        "answer": "Vancouver, Canada",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Earth does Deadpoll take place in?",
+-        "answer": "Earth 10005",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Solar System ",
+-    "subject_questions": [
+-      {
+-        "question": "Which planet shares a name with a chemical element?",
+-        "answer": "Mercury",
+-        "value": 100
+-      },
+-      {
+-        "question": "WHat is the saying that utilizes the first letter of each planet into a phrase?",
+-        "answer": "\"My Very Educated/Excellent Mother Just Served Us Nachos",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the key number for Gravity?",
+-        "answer": "9.8 m/s^2",
+-        "value": 300
+-      },
+-      {
+-        "question": "Which planet has the longest day, taking about 243 Earth days to rotate once? (Also known as the deadliest Planet)",
+-        "answer": "Venus",
+-        "value": 400
+-      },
+-      {
+-        "question": "What 2 elements is the sun mostly made of?",
+-        "answer": "75% Hydrogen and 24% Helium",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Christmas Movies ",
+-    "subject_questions": [
+-      {
+-        "question": "What christmas movie does Donald Trump appear in?",
+-        "answer": "Home Alone 2",
+-        "value": 100
+-      },
+-      {
+-        "question": "What Christmas movie features the dad getting a bad botox",
+-        "answer": "Christmas with the Kranks",
+-        "value": 200
+-      },
+-      {
+-        "question": "In what movie feature Santas engine falling in a park?",
+-        "answer": "Elf",
+-        "value": 300
+-      },
+-      {
+-        "question": "What Christmas movie has a pet reindeer named \"Snow-Cone\"?",
+-        "answer": "Noelle",
+-        "value": 400
+-      },
+-      {
+-        "question": "What Christmas movie does Santa get arrested in?",
+-        "answer": "Christmas Chronicles",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Economics",
+-    "subject_questions": [
+-      {
+-        "question": "What goes Hand inhand with Demand? _____ and Demand",
+-        "answer": "Supply ",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the Law of Demand? As Price goes up Demand does what?",
+-        "answer": "Goes down",
+-        "value": 200
+-      },
+-      {
+-        "question": "What does it mean for something to be in Equalibrium?",
+-        "answer": "When supply and Demand are balenced",
+-        "value": 300
+-      },
+-      {
+-        "question": "What does the phrase \"Ceteris Paribus\" mean?",
+-        "answer": "Keeping all constants the same",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is Opportunity Cost?",
+-        "answer": "The value of what you give up when you choose one options over another",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Uh Oh Hollywood",
+-    "subject_questions": [
+-      {
+-        "question": "Who had a naughty video circling the internet and then was later cancelled by Kendrick Lamar?",
+-        "answer": "Drake",
+-        "value": 100
+-      },
+-      {
+-        "question": "What did Marilyn Manroe sing to the president at the time that later turned into a scandel",
+-        "answer": "\"Happy Birthday Mr. President\"",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who was featuredon the show\"quiet on set\" as one of the victums of Brian Peck",
+-        "answer": "Drake Bell",
+-        "value": 300
+-      },
+-      {
+-        "question": "What celebrity kissed their own brother on the red carpet",
+-        "answer": "Angelina Jolie",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Oscar- Winning director marriedhis longtime girlfriends adopted daughter in 1997?",
+-        "answer": "Woody Allen",
+-        "value": 500
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/mikey2.json
+===================================================================
+diff --git a/SavedBoards/mikey2.json b/SavedBoards/mikey2.json
+deleted file mode 100644
+--- a/SavedBoards/mikey2.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,152 +0,0 @@
+-[
+-  {
+-    "subject_title": "R.N.",
+-    "subject_questions": [
+-      {
+-        "question": "John Ronald Reuel",
+-        "answer": "JRR Tolkien",
+-        "value": 200
+-      },
+-      {
+-        "question": "Jeffery Jacobs",
+-        "answer": "JJ Abrams",
+-        "value": 400
+-      },
+-      {
+-        "question": "Robert Sylvester",
+-        "answer": "R Kelly",
+-        "value": 600
+-      },
+-      {
+-        "question": "Orenthal James",
+-        "answer": "OJ Simpson",
+-        "value": 800
+-      },
+-      {
+-        "question": "Justin James",
+-        "answer": "JJ Watt",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "White Christmas",
+-    "subject_questions": [
+-      {
+-        "question": "35%",
+-        "answer": "Hawaii",
+-        "value": 200
+-      },
+-      {
+-        "question": "29.8%",
+-        "answer": "Las Vegas",
+-        "value": 400
+-      },
+-      {
+-        "question": "28.8",
+-        "answer": "New York City",
+-        "value": 600
+-      },
+-      {
+-        "question": "25.1%",
+-        "answer": "Key West",
+-        "value": 800
+-      },
+-      {
+-        "question": "24.4%",
+-        "answer": "New Orleans",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "5 biggest booms",
+-    "subject_questions": [
+-      {
+-        "question": "400 million",
+-        "answer": "Toilet Paper",
+-        "value": 200
+-      },
+-      {
+-        "question": "40 million",
+-        "answer": "Rotisserie Chicken",
+-        "value": 400
+-      },
+-      {
+-        "question": "A lot",
+-        "answer": "Bacon",
+-        "value": 600
+-      },
+-      {
+-        "question": "100 Million",
+-        "answer": "Hot Dogs",
+-        "value": 800
+-      },
+-      {
+-        "question": "mucho",
+-        "answer": "gas",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Killer Status",
+-    "subject_questions": [
+-      {
+-        "question": "The Zodiac Killer",
+-        "answer": "California",
+-        "value": 200
+-      },
+-      {
+-        "question": "John Wayne Gacy",
+-        "answer": "Illinois",
+-        "value": 400
+-      },
+-      {
+-        "question": "Ted Bundy",
+-        "answer": "Florida",
+-        "value": 600
+-      },
+-      {
+-        "question": "Henry Lee Lucas",
+-        "answer": "Texas",
+-        "value": 800
+-      },
+-      {
+-        "question": "The oakland county child killer",
+-        "answer": "Michigan",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Band Hits",
+-    "subject_questions": [
+-      {
+-        "question": "Very fast coming ground",
+-        "answer": "Liam Payne, One direction",
+-        "value": 200
+-      },
+-      {
+-        "question": "Large amount of bullets",
+-        "answer": "Kurt Cobain, Nirvana",
+-        "value": 400
+-      },
+-      {
+-        "question": "A man penis",
+-        "answer": "Freddie Mercury, Queen",
+-        "value": 600
+-      },
+-      {
+-        "question": "A single bullet",
+-        "answer": "John Lennon, Beattles",
+-        "value": 800
+-      },
+-      {
+-        "question": "Bus",
+-        "answer": "Cliff Burton, Metallica",
+-        "value": 1000
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/everything.json
+===================================================================
+diff --git a/SavedBoards/everything.json b/SavedBoards/everything.json
+deleted file mode 100644
+--- a/SavedBoards/everything.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,602 +0,0 @@
+-[
+-  {
+-    "subject_title": "Science",
+-    "subject_questions": [
+-      {
+-        "question": "What is the chemical symbol for water?",
+-        "answer": "H2O",
+-        "value": 100
+-      },
+-      {
+-        "question": "Who developed the theory of relativity?",
+-        "answer": "Albert Einstein",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the powerhouse of the cell?",
+-        "answer": "Mitochondria",
+-        "value": 300
+-      },
+-      {
+-        "question": "What gas do plants absorb during photosynthesis?",
+-        "answer": "Carbon dioxide",
+-        "value": 400
+-      },
+-      {
+-        "question": "In physics, what is the unit of measurement for force?",
+-        "answer": "Newtons",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "History",
+-    "subject_questions": [
+-      {
+-        "question": "Who was the first President of the United States?",
+-        "answer": "George Washington",
+-        "value": 100
+-      },
+-      {
+-        "question": "In what year did World War II end?",
+-        "answer": "1945",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+-        "answer": "Nikita Khrushchev",
+-        "value": 300
+-      },
+-      {
+-        "question": "What ancient civilization built the pyramids in Egypt?",
+-        "answer": "Ancient Egyptians",
+-        "value": 400
+-      },
+-      {
+-        "question": "The Renaissance period originated in which country?",
+-        "answer": "Italy",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Literature",
+-    "subject_questions": [
+-      {
+-        "question": "Who wrote \"Romeo and Juliet\"?",
+-        "answer": "William Shakespeare",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the title of J.K. Rowling\u0027s first Harry Potter book?",
+-        "answer": "Harry Potter and the Philosopher\u0027s Stone (or Sorcerer\u0027s Stone in the U.S.)",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who wrote \"To Kill a Mockingbird\"?",
+-        "answer": "Harper Lee",
+-        "value": 300
+-      },
+-      {
+-        "question": "What dystopian novel by George Orwell explores themes of totalitarianism?",
+-        "answer": "1984",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Shakespeare play features the character Macbeth?",
+-        "answer": "Macbeth",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Geography",
+-    "subject_questions": [
+-      {
+-        "question": "What is the capital city of France?",
+-        "answer": "Paris",
+-        "value": 100
+-      },
+-      {
+-        "question": "Which river is the longest in the world?",
+-        "answer": "Nile",
+-        "value": 200
+-      },
+-      {
+-        "question": "In which continent is the Sahara Desert located?",
+-        "answer": "Africa",
+-        "value": 300
+-      },
+-      {
+-        "question": "What is the largest ocean on Earth?",
+-        "answer": "Pacific Ocean",
+-        "value": 400
+-      },
+-      {
+-        "question": "Name the seven continents.",
+-        "answer": "Africa, Antarctica, Asia, Europe, North America, Australia, South America",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Technology",
+-    "subject_questions": [
+-      {
+-        "question": "Who is the co-founder of Microsoft?",
+-        "answer": "Bill Gates",
+-        "value": 100
+-      },
+-      {
+-        "question": "What does the acronym \"HTML\" stand for?",
+-        "answer": "Hypertext Markup Language",
+-        "value": 200
+-      },
+-      {
+-        "question": "In computing, what does CPU stand for?",
+-        "answer": "Central Processing Unit",
+-        "value": 300
+-      },
+-      {
+-        "question": "Who developed the theory of general relativity?",
+-        "answer": "Albert Einstein",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is the programming language created by Guido van Rossum?",
+-        "answer": "Python",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "R.N.",
+-    "subject_questions": [
+-      {
+-        "question": "John Ronald Reuel",
+-        "answer": "JRR Tolkien",
+-        "value": 200
+-      },
+-      {
+-        "question": "Jeffery Jacobs",
+-        "answer": "JJ Abrams",
+-        "value": 400
+-      },
+-      {
+-        "question": "Robert Sylvester",
+-        "answer": "R Kelly",
+-        "value": 600
+-      },
+-      {
+-        "question": "Orenthal James",
+-        "answer": "OJ Simpson",
+-        "value": 800
+-      },
+-      {
+-        "question": "Justin James",
+-        "answer": "JJ Watt",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "White Christmas",
+-    "subject_questions": [
+-      {
+-        "question": "35%",
+-        "answer": "Hawaii",
+-        "value": 200
+-      },
+-      {
+-        "question": "29.8%",
+-        "answer": "Las Vegas",
+-        "value": 400
+-      },
+-      {
+-        "question": "28.8",
+-        "answer": "New York City",
+-        "value": 600
+-      },
+-      {
+-        "question": "25.1%",
+-        "answer": "Key West",
+-        "value": 800
+-      },
+-      {
+-        "question": "24.4%",
+-        "answer": "New Orleans",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "5 biggest booms",
+-    "subject_questions": [
+-      {
+-        "question": "400 million",
+-        "answer": "Toilet Paper",
+-        "value": 200
+-      },
+-      {
+-        "question": "40 million",
+-        "answer": "Rotisserie Chicken",
+-        "value": 400
+-      },
+-      {
+-        "question": "A lot",
+-        "answer": "Bacon",
+-        "value": 600
+-      },
+-      {
+-        "question": "100 Million",
+-        "answer": "Hot Dogs",
+-        "value": 800
+-      },
+-      {
+-        "question": "mucho",
+-        "answer": "gas",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Killer Status",
+-    "subject_questions": [
+-      {
+-        "question": "The Zodiac Killer",
+-        "answer": "California",
+-        "value": 200
+-      },
+-      {
+-        "question": "John Wayne Gacy",
+-        "answer": "Illinois",
+-        "value": 400
+-      },
+-      {
+-        "question": "Ted Bundy",
+-        "answer": "Florida",
+-        "value": 600
+-      },
+-      {
+-        "question": "Henry Lee Lucas",
+-        "answer": "Texas",
+-        "value": 800
+-      },
+-      {
+-        "question": "The oakland county child killer",
+-        "answer": "Michigan",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Band Hits",
+-    "subject_questions": [
+-      {
+-        "question": "Very fast coming ground",
+-        "answer": "Liam Payne, One direction",
+-        "value": 200
+-      },
+-      {
+-        "question": "Large amount of bullets",
+-        "answer": "Kurt Cobain, Nirvana",
+-        "value": 400
+-      },
+-      {
+-        "question": "A man penis",
+-        "answer": "Freddie Mercury, Queen",
+-        "value": 600
+-      },
+-      {
+-        "question": "A single bullet",
+-        "answer": "John Lennon, Beattles",
+-        "value": 800
+-      },
+-      {
+-        "question": "Bus",
+-        "answer": "Cliff Burton, Metallica",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Crime Trivia",
+-    "subject_questions": [
+-      {
+-        "question": "What name was given to the serial murderer that terrorised London",
+-        "answer": "Jack the Ripper",
+-        "value": 100
+-      },
+-      {
+-        "question": "Which city did Al Capone first establish his crminal empire",
+-        "answer": "Chicago",
+-        "value": 200
+-      },
+-      {
+-        "question": "Which group claimed to be responsible for the bombing of the Pakistani Danish Embassy",
+-        "answer": "Al Qaeda",
+-        "value": 300
+-      },
+-      {
+-        "question": "Which Serial Killer lead a commune that called themselves \"The Family\"",
+-        "answer": "Charles Manson",
+-        "value": 400
+-      },
+-      {
+-        "question": "What profession was Harold Simpson who convicted of 16 murders but is more likely to be about 250?",
+-        "answer": "Doctor",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Early 2000s Music",
+-    "subject_questions": [
+-      {
+-        "question": "What country Singer found himself back on air ways in the 2000s with \"Hurt\"",
+-        "answer": "Johnny Cash",
+-        "value": 100
+-      },
+-      {
+-        "question": "What group sang Califoniacation",
+-        "answer": "Red Hot Chili Peppers",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who Sang \"Hot in Herre\"",
+-        "answer": "Nelly",
+-        "value": 300
+-      },
+-      {
+-        "question": "Who was Featured on Rhiannas Hit \"Umbrella\"",
+-        "answer": "Jay Z",
+-        "value": 400
+-      },
+-      {
+-        "question": "At the end of which month did Green Day want to be awoken on",
+-        "answer": "September",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Sports",
+-    "subject_questions": [
+-      {
+-        "question": "How many rings are there on the olympic flag",
+-        "answer": "5",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the golf term for  a score of one under par",
+-        "answer": "Birdie",
+-        "value": 200
+-      },
+-      {
+-        "question": "In tennis what number is represented by the term \"Love\"",
+-        "answer": "0",
+-        "value": 300
+-      },
+-      {
+-        "question": "How many players are allowed on the field in a standard Soccer Match",
+-        "answer": "11",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is the Max amount of clubs a professional golfer can carry in a round (of golf)",
+-        "answer": "14",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Cars 2 Trivia",
+-    "subject_questions": [
+-      {
+-        "question": "Who did the United states purchase Alaska from",
+-        "answer": "Russia",
+-        "value": 100
+-      },
+-      {
+-        "question": "the 19th amendments give who the right to vote",
+-        "answer": "Hoes",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is considered to be the largest empire in history",
+-        "answer": "the Mongol Empire",
+-        "value": 300
+-      },
+-      {
+-        "question": "What is the nameof the Ukranian Power plant that exploded",
+-        "answer": "Chernobyl",
+-        "value": 400
+-      },
+-      {
+-        "question": "Where is the pyramid of the sun located",
+-        "answer": "Mexico",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Random Dancing",
+-    "subject_questions": [
+-      {
+-        "question": "What is the Smallest of the Great Lakes",
+-        "answer": "Lake Ontario",
+-        "value": 100
+-      },
+-      {
+-        "question": "A camera inspired the logo of what famous social media app",
+-        "answer": "Instagram",
+-        "value": 200
+-      },
+-      {
+-        "question": "What planet has over 145 known moons",
+-        "answer": "Saturn",
+-        "value": 300
+-      },
+-      {
+-        "question": "The Japanese Giant type of this Crustaeton can measure up to 12 ft across",
+-        "answer": "Spider Crab",
+-        "value": 400
+-      },
+-      {
+-        "question": "What juice brand was devised to promote Patriotism and convinience during ww2",
+-        "answer": "Minute Maid",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Deadpool 3 ",
+-    "subject_questions": [
+-      {
+-        "question": "Who plays Wolverine?",
+-        "answer": "Hugh Jackman",
+-        "value": 100
+-      },
+-      {
+-        "question": "What TV show does deadpool refer to in the beginning of the movie and why?",
+-        "answer": "Gossip Girl, Blake Lively",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the name of the main villain",
+-        "answer": "Cassandra Nova",
+-        "value": 300
+-      },
+-      {
+-        "question": "What city was deadpool filmed in?",
+-        "answer": "Vancouver, Canada",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Earth does Deadpoll take place in?",
+-        "answer": "Earth 10005",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Solar System ",
+-    "subject_questions": [
+-      {
+-        "question": "Which planet shares a name with a chemical element?",
+-        "answer": "Mercury",
+-        "value": 100
+-      },
+-      {
+-        "question": "WHat is the saying that utilizes the first letter of each planet into a phrase?",
+-        "answer": "\"My Very Educated/Excellent Mother Just Served Us Nachos",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the key number for Gravity?",
+-        "answer": "9.8 m/s^2",
+-        "value": 300
+-      },
+-      {
+-        "question": "Which planet has the longest day, taking about 243 Earth days to rotate once? (Also known as the deadliest Planet)",
+-        "answer": "Venus",
+-        "value": 400
+-      },
+-      {
+-        "question": "What 2 elements is the sun mostly made of?",
+-        "answer": "75% Hydrogen and 24% Helium",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Christmas Movies ",
+-    "subject_questions": [
+-      {
+-        "question": "What christmas movie does Donald Trump appear in?",
+-        "answer": "Home Alone 2",
+-        "value": 100
+-      },
+-      {
+-        "question": "What Christmas movie features the dad getting a bad botox",
+-        "answer": "Christmas with the Kranks",
+-        "value": 200
+-      },
+-      {
+-        "question": "In what movie feature Santas engine falling in a park?",
+-        "answer": "Elf",
+-        "value": 300
+-      },
+-      {
+-        "question": "What Christmas movie has a pet reindeer named \"Snow-Cone\"?",
+-        "answer": "Noelle",
+-        "value": 400
+-      },
+-      {
+-        "question": "What Christmas movie does Santa get arrested in?",
+-        "answer": "Christmas Chronicles",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Economics",
+-    "subject_questions": [
+-      {
+-        "question": "What goes Hand inhand with Demand? _____ and Demand",
+-        "answer": "Supply ",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the Law of Demand? As Price goes up Demand does what?",
+-        "answer": "Goes down",
+-        "value": 200
+-      },
+-      {
+-        "question": "What does it mean for something to be in Equalibrium?",
+-        "answer": "When supply and Demand are balenced",
+-        "value": 300
+-      },
+-      {
+-        "question": "What does the phrase \"Ceteris Paribus\" mean?",
+-        "answer": "Keeping all constants the same",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is Opportunity Cost?",
+-        "answer": "The value of what you give up when you choose one options over another",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Uh Oh Hollywood",
+-    "subject_questions": [
+-      {
+-        "question": "Who had a naughty video circling the internet and then was later cancelled by Kendrick Lamar?",
+-        "answer": "Drake",
+-        "value": 100
+-      },
+-      {
+-        "question": "What did Marilyn Manroe sing to the president at the time that later turned into a scandel",
+-        "answer": "\"Happy Birthday Mr. President\"",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who was featuredon the show\"quiet on set\" as one of the victums of Brian Peck",
+-        "answer": "Drake Bell",
+-        "value": 300
+-      },
+-      {
+-        "question": "What celebrity kissed their own brother on the red carpet",
+-        "answer": "Angelina Jolie",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Oscar- Winning director marriedhis longtime girlfriends adopted daughter in 1997?",
+-        "answer": "Woody Allen",
+-        "value": 500
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/test.json
+===================================================================
+diff --git a/SavedBoards/test.json b/SavedBoards/test.json
+deleted file mode 100644
+--- a/SavedBoards/test.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,37 +0,0 @@
+-[
+-  {
+-    "subject_title": "Test Subject 1",
+-    "subject_questions": [
+-      {
+-        "question": "Question 1",
+-        "answer": "A",
+-        "value": 9999
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Test2",
+-    "subject_questions": [
+-      {
+-        "question": "",
+-        "answer": "",
+-        "value": 0
+-      },
+-      {
+-        "question": "",
+-        "answer": "",
+-        "value": 0
+-      },
+-      {
+-        "question": "",
+-        "answer": "",
+-        "value": 0
+-      },
+-      {
+-        "question": "",
+-        "answer": "",
+-        "value": 0
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/teijdfasijdidfn_fidf__.json
+===================================================================
+diff --git a/SavedBoards/teijdfasijdidfn_fidf__.json b/SavedBoards/teijdfasijdidfn_fidf__.json
+deleted file mode 100644
+--- a/SavedBoards/teijdfasijdidfn_fidf__.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,152 +0,0 @@
+-[
+-  {
+-    "subject_title": "Science",
+-    "subject_questions": [
+-      {
+-        "question": "What is the chemical symbol for water?",
+-        "answer": "H2O",
+-        "value": 100
+-      },
+-      {
+-        "question": "Who developed the theory of relativity?",
+-        "answer": "Albert Einstein",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is the powerhouse of the cell?",
+-        "answer": "Mitochondria",
+-        "value": 300
+-      },
+-      {
+-        "question": "What gas do plants absorb during photosynthesis?",
+-        "answer": "Carbon dioxide",
+-        "value": 400
+-      },
+-      {
+-        "question": "In physics, what is the unit of measurement for force?",
+-        "answer": "Newtons",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "History",
+-    "subject_questions": [
+-      {
+-        "question": "Who was the first President of the United States?",
+-        "answer": "George Washington",
+-        "value": 100
+-      },
+-      {
+-        "question": "In what year did World War II end?",
+-        "answer": "1945",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+-        "answer": "Nikita Khrushchev",
+-        "value": 300
+-      },
+-      {
+-        "question": "What ancient civilization built the pyramids in Egypt?",
+-        "answer": "Ancient Egyptians",
+-        "value": 400
+-      },
+-      {
+-        "question": "The Renaissance period originated in which country?",
+-        "answer": "Italy",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Literature",
+-    "subject_questions": [
+-      {
+-        "question": "Who wrote \"Romeo and Juliet\"?",
+-        "answer": "William Shakespeare",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the title of J.K. Rowling\u0027s first Harry Potter book?",
+-        "answer": "Harry Potter and the Philosopher\u0027s Stone (or Sorcerer\u0027s Stone in the U.S.)",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who wrote \"To Kill a Mockingbird\"?",
+-        "answer": "Harper Lee",
+-        "value": 300
+-      },
+-      {
+-        "question": "What dystopian novel by George Orwell explores themes of totalitarianism?",
+-        "answer": "1984",
+-        "value": 400
+-      },
+-      {
+-        "question": "Which Shakespeare play features the character Macbeth?",
+-        "answer": "Macbeth",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Geography",
+-    "subject_questions": [
+-      {
+-        "question": "What is the capital city of France?",
+-        "answer": "Paris",
+-        "value": 100
+-      },
+-      {
+-        "question": "Which river is the longest in the world?",
+-        "answer": "Nile",
+-        "value": 200
+-      },
+-      {
+-        "question": "In which continent is the Sahara Desert located?",
+-        "answer": "Africa",
+-        "value": 300
+-      },
+-      {
+-        "question": "What is the largest ocean on Earth?",
+-        "answer": "Pacific Ocean",
+-        "value": 400
+-      },
+-      {
+-        "question": "Name the seven continents.",
+-        "answer": "Africa, Antarctica, Asia, Europe, North America, Australia, South America",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Technology",
+-    "subject_questions": [
+-      {
+-        "question": "Who is the co-founder of Microsoft?",
+-        "answer": "Bill Gates",
+-        "value": 100
+-      },
+-      {
+-        "question": "What does the acronym \"HTML\" stand for?",
+-        "answer": "Hypertext Markup Language",
+-        "value": 200
+-      },
+-      {
+-        "question": "In computing, what does CPU stand for?",
+-        "answer": "Central Processing Unit",
+-        "value": 300
+-      },
+-      {
+-        "question": "Who developed the theory of general relativity?",
+-        "answer": "Albert Einstein",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is the programming language created by Guido van Rossum?",
+-        "answer": "Python",
+-        "value": 500
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/joe_game.json
+===================================================================
+diff --git a/SavedBoards/joe_game.json b/SavedBoards/joe_game.json
+deleted file mode 100644
+--- a/SavedBoards/joe_game.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,152 +0,0 @@
+-[
+-  {
+-    "subject_title": "Crime Trivia",
+-    "subject_questions": [
+-      {
+-        "question": "What name was given to the serial murderer that terrorised London",
+-        "answer": "Jack the Ripper",
+-        "value": 100
+-      },
+-      {
+-        "question": "Which city did Al Capone first establish his crminal empire",
+-        "answer": "Chicago",
+-        "value": 200
+-      },
+-      {
+-        "question": "Which group claimed to be responsible for the bombing of the Pakistani Danish Embassy",
+-        "answer": "Al Qaeda",
+-        "value": 300
+-      },
+-      {
+-        "question": "Which Serial Killer lead a commune that called themselves \"The Family\"",
+-        "answer": "Charles Manson",
+-        "value": 400
+-      },
+-      {
+-        "question": "What profession was Harold Simpson who convicted of 16 murders but is more likely to be about 250?",
+-        "answer": "Doctor",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Early 2000s Music",
+-    "subject_questions": [
+-      {
+-        "question": "What country Singer found himself back on air ways in the 2000s with \"Hurt\"",
+-        "answer": "Johnny Cash",
+-        "value": 100
+-      },
+-      {
+-        "question": "What group sang Califoniacation",
+-        "answer": "Red Hot Chili Peppers",
+-        "value": 200
+-      },
+-      {
+-        "question": "Who Sang \"Hot in Herre\"",
+-        "answer": "Nelly",
+-        "value": 300
+-      },
+-      {
+-        "question": "Who was Featured on Rhiannas Hit \"Umbrella\"",
+-        "answer": "Jay Z",
+-        "value": 400
+-      },
+-      {
+-        "question": "At the end of which month did Green Day want to be awoken on",
+-        "answer": "September",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Sports",
+-    "subject_questions": [
+-      {
+-        "question": "How many rings are there on the olympic flag",
+-        "answer": "5",
+-        "value": 100
+-      },
+-      {
+-        "question": "What is the golf term for  a score of one under par",
+-        "answer": "Birdie",
+-        "value": 200
+-      },
+-      {
+-        "question": "In tennis what number is represented by the term \"Love\"",
+-        "answer": "0",
+-        "value": 300
+-      },
+-      {
+-        "question": "How many players are allowed on the field in a standard Soccer Match",
+-        "answer": "11",
+-        "value": 400
+-      },
+-      {
+-        "question": "What is the Max amount of clubs a professional golfer can carry in a round (of golf)",
+-        "answer": "14",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Cars 2 Trivia",
+-    "subject_questions": [
+-      {
+-        "question": "Who did the United states purchase Alaska from",
+-        "answer": "Russia",
+-        "value": 100
+-      },
+-      {
+-        "question": "the 19th amendments give who the right to vote",
+-        "answer": "Hoes",
+-        "value": 200
+-      },
+-      {
+-        "question": "What is considered to be the largest empire in history",
+-        "answer": "the Mongol Empire",
+-        "value": 300
+-      },
+-      {
+-        "question": "What is the nameof the Ukranian Power plant that exploded",
+-        "answer": "Chernobyl",
+-        "value": 400
+-      },
+-      {
+-        "question": "Where is the pyramid of the sun located",
+-        "answer": "Mexico",
+-        "value": 500
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Random Dancing",
+-    "subject_questions": [
+-      {
+-        "question": "What is the Smallest of the Great Lakes",
+-        "answer": "Lake Ontario",
+-        "value": 100
+-      },
+-      {
+-        "question": "A camera inspired the logo of what famous social media app",
+-        "answer": "Instagram",
+-        "value": 200
+-      },
+-      {
+-        "question": "What planet has over 145 known moons",
+-        "answer": "Saturn",
+-        "value": 300
+-      },
+-      {
+-        "question": "The Japanese Giant type of this Crustaeton can measure up to 12 ft across",
+-        "answer": "Spider Crab",
+-        "value": 400
+-      },
+-      {
+-        "question": "What juice brand was devised to promote Patriotism and convinience during ww2",
+-        "answer": "Minute Maid",
+-        "value": 500
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file
+Index: SavedBoards/mikey1.json
+===================================================================
+diff --git a/SavedBoards/mikey1.json b/SavedBoards/mikey1.json
+deleted file mode 100644
+--- a/SavedBoards/mikey1.json	(revision af284f854ec925864d9616600fa2484848a77ec3)
++++ /dev/null	(revision af284f854ec925864d9616600fa2484848a77ec3)
+@@ -1,152 +0,0 @@
+-[
+-  {
+-    "subject_title": "R.N.",
+-    "subject_questions": [
+-      {
+-        "question": "John Ronald Reuel",
+-        "answer": "JRR Tolkien",
+-        "value": 200
+-      },
+-      {
+-        "question": "Jeffery Jacobs",
+-        "answer": "JJ Abrams",
+-        "value": 400
+-      },
+-      {
+-        "question": "Robert Sylvester",
+-        "answer": "R Kelly",
+-        "value": 600
+-      },
+-      {
+-        "question": "Orenthal James",
+-        "answer": "OJ Simpson",
+-        "value": 800
+-      },
+-      {
+-        "question": "Justin James",
+-        "answer": "JJ Watt",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "White Christmas",
+-    "subject_questions": [
+-      {
+-        "question": "35%",
+-        "answer": "Hawaii",
+-        "value": 200
+-      },
+-      {
+-        "question": "29.8%",
+-        "answer": "Las Vegas",
+-        "value": 400
+-      },
+-      {
+-        "question": "28.8",
+-        "answer": "New York City",
+-        "value": 600
+-      },
+-      {
+-        "question": "25.1%",
+-        "answer": "Key West",
+-        "value": 800
+-      },
+-      {
+-        "question": "24.4%",
+-        "answer": "New Orleans",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "5 biggest booms",
+-    "subject_questions": [
+-      {
+-        "question": "400 million",
+-        "answer": "Toilet Paper",
+-        "value": 200
+-      },
+-      {
+-        "question": "40 million",
+-        "answer": "Rotisserie Chicken",
+-        "value": 400
+-      },
+-      {
+-        "question": "A lot",
+-        "answer": "Bacon",
+-        "value": 600
+-      },
+-      {
+-        "question": "100 Million",
+-        "answer": "Hot Dogs",
+-        "value": 800
+-      },
+-      {
+-        "question": "mucho",
+-        "answer": "gas",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Killer Status",
+-    "subject_questions": [
+-      {
+-        "question": "The Zodiac Killer",
+-        "answer": "California",
+-        "value": 200
+-      },
+-      {
+-        "question": "John Wayne Gacy",
+-        "answer": "Illinois",
+-        "value": 400
+-      },
+-      {
+-        "question": "Ted Bundy",
+-        "answer": "Florida",
+-        "value": 600
+-      },
+-      {
+-        "question": "Henry Lee Lucas",
+-        "answer": "Texas",
+-        "value": 800
+-      },
+-      {
+-        "question": "The oakland county child killer",
+-        "answer": "Michigan",
+-        "value": 1000
+-      }
+-    ]
+-  },
+-  {
+-    "subject_title": "Band Hits",
+-    "subject_questions": [
+-      {
+-        "question": "Very fast coming ground",
+-        "answer": "Liam Payne, One direction",
+-        "value": 200
+-      },
+-      {
+-        "question": "Large amount of bullets",
+-        "answer": "Kurt Cobain, Nirvana",
+-        "value": 400
+-      },
+-      {
+-        "question": "A man penis",
+-        "answer": "Freddie Mercury, Queen",
+-        "value": 600
+-      },
+-      {
+-        "question": "A single bullet",
+-        "answer": "John Lennon, Beattles",
+-        "value": 800
+-      },
+-      {
+-        "question": "Bus",
+-        "answer": "Cliff Burton, Metallica",
+-        "value": 1000
+-      }
+-    ]
+-  }
+-]
+\ No newline at end of file

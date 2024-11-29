@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e544cd19-6113-4df0-bdf4-83aa57f93f8d" name="Changes" comment="FEAT - Cleaned up code. Removed Old pieces">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jetbrains_annotations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jetbrains_annotations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SavedBoards/default.json" beforeDir="false" afterPath="$PROJECT_DIR$/SavedBoards/default.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/annotations-24.0.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/annotations-24.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gson-2.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +65,13 @@
     "JAR Application.Jeopardy 2.0.jar.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "true",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "J:/Downloads/gson-2.11.0.jar",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
@@ -103,6 +106,19 @@
     <configuration name="Jeopardy 2.0.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Jeopardy_2_0_jar/Jeopardy 2.0.jar" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Jeopardy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Jeopardy" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
